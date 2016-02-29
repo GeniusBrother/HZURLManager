@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		289E25AF1C83C518001B0AA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25AE1C83C518001B0AA2 /* main.m */; };
+		289E25B21C83C518001B0AA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25B11C83C518001B0AA2 /* AppDelegate.m */; };
+		289E25B51C83C518001B0AA2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25B41C83C518001B0AA2 /* ViewController.m */; };
+		289E25BA1C83C518001B0AA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 289E25B91C83C518001B0AA2 /* Assets.xcassets */; };
+		289E25BD1C83C518001B0AA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289E25BB1C83C518001B0AA2 /* LaunchScreen.storyboard */; };
+		289E25D31C83C5AF001B0AA2 /* HZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25C61C83C5AF001B0AA2 /* HZNavigationController.m */; };
+		289E25D41C83C5AF001B0AA2 /* HZURLManageConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25C81C83C5AF001B0AA2 /* HZURLManageConfig.m */; };
+		289E25D51C83C5AF001B0AA2 /* HZURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25CA1C83C5AF001B0AA2 /* HZURLManager.m */; };
+		289E25D61C83C5AF001B0AA2 /* HZURLNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25CC1C83C5AF001B0AA2 /* HZURLNavigation.m */; };
+		289E25D71C83C5AF001B0AA2 /* HZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25CE1C83C5AF001B0AA2 /* HZViewController.m */; };
+		289E25D81C83C5AF001B0AA2 /* HZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25D01C83C5AF001B0AA2 /* HZWebViewController.m */; };
+		289E25D91C83C5AF001B0AA2 /* UIViewController+HZURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25D21C83C5AF001B0AA2 /* UIViewController+HZURLManager.m */; };
+		289E25DD1C83C637001B0AA2 /* NSObject+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25DC1C83C637001B0AA2 /* NSObject+HZExtend.m */; };
+		289E25E21C83C73F001B0AA2 /* NSString+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25DF1C83C73F001B0AA2 /* NSString+HZExtend.m */; };
+		289E25E31C83C73F001B0AA2 /* NSURL+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25E11C83C73F001B0AA2 /* NSURL+HZExtend.m */; };
+		289E25E61C83CA74001B0AA2 /* URLItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25E51C83CA74001B0AA2 /* URLItemViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		289E25AA1C83C518001B0AA2 /* URLManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		289E25AE1C83C518001B0AA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		289E25B01C83C518001B0AA2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		289E25B11C83C518001B0AA2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		289E25B31C83C518001B0AA2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		289E25B41C83C518001B0AA2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		289E25B91C83C518001B0AA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		289E25BC1C83C518001B0AA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		289E25BE1C83C518001B0AA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		289E25C51C83C5AF001B0AA2 /* HZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZNavigationController.h; sourceTree = "<group>"; };
+		289E25C61C83C5AF001B0AA2 /* HZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZNavigationController.m; sourceTree = "<group>"; };
+		289E25C71C83C5AF001B0AA2 /* HZURLManageConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZURLManageConfig.h; sourceTree = "<group>"; };
+		289E25C81C83C5AF001B0AA2 /* HZURLManageConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZURLManageConfig.m; sourceTree = "<group>"; };
+		289E25C91C83C5AF001B0AA2 /* HZURLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZURLManager.h; sourceTree = "<group>"; };
+		289E25CA1C83C5AF001B0AA2 /* HZURLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZURLManager.m; sourceTree = "<group>"; };
+		289E25CB1C83C5AF001B0AA2 /* HZURLNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZURLNavigation.h; sourceTree = "<group>"; };
+		289E25CC1C83C5AF001B0AA2 /* HZURLNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZURLNavigation.m; sourceTree = "<group>"; };
+		289E25CD1C83C5AF001B0AA2 /* HZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZViewController.h; sourceTree = "<group>"; };
+		289E25CE1C83C5AF001B0AA2 /* HZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZViewController.m; sourceTree = "<group>"; };
+		289E25CF1C83C5AF001B0AA2 /* HZWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZWebViewController.h; sourceTree = "<group>"; };
+		289E25D01C83C5AF001B0AA2 /* HZWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWebViewController.m; sourceTree = "<group>"; };
+		289E25D11C83C5AF001B0AA2 /* UIViewController+HZURLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HZURLManager.h"; sourceTree = "<group>"; };
+		289E25D21C83C5AF001B0AA2 /* UIViewController+HZURLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HZURLManager.m"; sourceTree = "<group>"; };
+		289E25DA1C83C5E9001B0AA2 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		289E25DB1C83C637001B0AA2 /* NSObject+HZExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HZExtend.h"; sourceTree = "<group>"; };
+		289E25DC1C83C637001B0AA2 /* NSObject+HZExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HZExtend.m"; sourceTree = "<group>"; };
+		289E25DE1C83C73F001B0AA2 /* NSString+HZExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HZExtend.h"; sourceTree = "<group>"; };
+		289E25DF1C83C73F001B0AA2 /* NSString+HZExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HZExtend.m"; sourceTree = "<group>"; };
+		289E25E01C83C73F001B0AA2 /* NSURL+HZExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+HZExtend.h"; sourceTree = "<group>"; };
+		289E25E11C83C73F001B0AA2 /* NSURL+HZExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+HZExtend.m"; sourceTree = "<group>"; };
+		289E25E41C83CA74001B0AA2 /* URLItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLItemViewController.h; sourceTree = "<group>"; };
+		289E25E51C83CA74001B0AA2 /* URLItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLItemViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		289E25A71C83C518001B0AA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		289E25A11C83C518001B0AA2 = {
+			isa = PBXGroup;
+			children = (
+				289E25AC1C83C518001B0AA2 /* URLManager */,
+				289E25AB1C83C518001B0AA2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		289E25AB1C83C518001B0AA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				289E25AA1C83C518001B0AA2 /* URLManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		289E25AC1C83C518001B0AA2 /* URLManager */ = {
+			isa = PBXGroup;
+			children = (
+				289E25C41C83C5AF001B0AA2 /* URLManager */,
+				289E25B01C83C518001B0AA2 /* AppDelegate.h */,
+				289E25B11C83C518001B0AA2 /* AppDelegate.m */,
+				289E25B31C83C518001B0AA2 /* ViewController.h */,
+				289E25B41C83C518001B0AA2 /* ViewController.m */,
+				289E25E41C83CA74001B0AA2 /* URLItemViewController.h */,
+				289E25E51C83CA74001B0AA2 /* URLItemViewController.m */,
+				289E25B91C83C518001B0AA2 /* Assets.xcassets */,
+				289E25BB1C83C518001B0AA2 /* LaunchScreen.storyboard */,
+				289E25BE1C83C518001B0AA2 /* Info.plist */,
+				289E25AD1C83C518001B0AA2 /* Supporting Files */,
+			);
+			path = URLManager;
+			sourceTree = "<group>";
+		};
+		289E25AD1C83C518001B0AA2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				289E25AE1C83C518001B0AA2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		289E25C41C83C5AF001B0AA2 /* URLManager */ = {
+			isa = PBXGroup;
+			children = (
+				289E25DE1C83C73F001B0AA2 /* NSString+HZExtend.h */,
+				289E25DF1C83C73F001B0AA2 /* NSString+HZExtend.m */,
+				289E25E01C83C73F001B0AA2 /* NSURL+HZExtend.h */,
+				289E25E11C83C73F001B0AA2 /* NSURL+HZExtend.m */,
+				289E25DB1C83C637001B0AA2 /* NSObject+HZExtend.h */,
+				289E25DC1C83C637001B0AA2 /* NSObject+HZExtend.m */,
+				289E25DA1C83C5E9001B0AA2 /* Singleton.h */,
+				289E25C51C83C5AF001B0AA2 /* HZNavigationController.h */,
+				289E25C61C83C5AF001B0AA2 /* HZNavigationController.m */,
+				289E25C71C83C5AF001B0AA2 /* HZURLManageConfig.h */,
+				289E25C81C83C5AF001B0AA2 /* HZURLManageConfig.m */,
+				289E25C91C83C5AF001B0AA2 /* HZURLManager.h */,
+				289E25CA1C83C5AF001B0AA2 /* HZURLManager.m */,
+				289E25CB1C83C5AF001B0AA2 /* HZURLNavigation.h */,
+				289E25CC1C83C5AF001B0AA2 /* HZURLNavigation.m */,
+				289E25CD1C83C5AF001B0AA2 /* HZViewController.h */,
+				289E25CE1C83C5AF001B0AA2 /* HZViewController.m */,
+				289E25CF1C83C5AF001B0AA2 /* HZWebViewController.h */,
+				289E25D01C83C5AF001B0AA2 /* HZWebViewController.m */,
+				289E25D11C83C5AF001B0AA2 /* UIViewController+HZURLManager.h */,
+				289E25D21C83C5AF001B0AA2 /* UIViewController+HZURLManager.m */,
+			);
+			path = URLManager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		289E25A91C83C518001B0AA2 /* URLManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 289E25C11C83C518001B0AA2 /* Build configuration list for PBXNativeTarget "URLManager" */;
+			buildPhases = (
+				289E25A61C83C518001B0AA2 /* Sources */,
+				289E25A71C83C518001B0AA2 /* Frameworks */,
+				289E25A81C83C518001B0AA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = URLManager;
+			productName = URLManager;
+			productReference = 289E25AA1C83C518001B0AA2 /* URLManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		289E25A21C83C518001B0AA2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = GeniusBrother;
+				TargetAttributes = {
+					289E25A91C83C518001B0AA2 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 289E25A51C83C518001B0AA2 /* Build configuration list for PBXProject "URLManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 289E25A11C83C518001B0AA2;
+			productRefGroup = 289E25AB1C83C518001B0AA2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				289E25A91C83C518001B0AA2 /* URLManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		289E25A81C83C518001B0AA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				289E25BD1C83C518001B0AA2 /* LaunchScreen.storyboard in Resources */,
+				289E25BA1C83C518001B0AA2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		289E25A61C83C518001B0AA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				289E25D61C83C5AF001B0AA2 /* HZURLNavigation.m in Sources */,
+				289E25B51C83C518001B0AA2 /* ViewController.m in Sources */,
+				289E25D31C83C5AF001B0AA2 /* HZNavigationController.m in Sources */,
+				289E25D41C83C5AF001B0AA2 /* HZURLManageConfig.m in Sources */,
+				289E25DD1C83C637001B0AA2 /* NSObject+HZExtend.m in Sources */,
+				289E25B21C83C518001B0AA2 /* AppDelegate.m in Sources */,
+				289E25AF1C83C518001B0AA2 /* main.m in Sources */,
+				289E25E61C83CA74001B0AA2 /* URLItemViewController.m in Sources */,
+				289E25D91C83C5AF001B0AA2 /* UIViewController+HZURLManager.m in Sources */,
+				289E25D71C83C5AF001B0AA2 /* HZViewController.m in Sources */,
+				289E25D51C83C5AF001B0AA2 /* HZURLManager.m in Sources */,
+				289E25E31C83C73F001B0AA2 /* NSURL+HZExtend.m in Sources */,
+				289E25D81C83C5AF001B0AA2 /* HZWebViewController.m in Sources */,
+				289E25E21C83C73F001B0AA2 /* NSString+HZExtend.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		289E25BB1C83C518001B0AA2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				289E25BC1C83C518001B0AA2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		289E25BF1C83C518001B0AA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		289E25C01C83C518001B0AA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		289E25C21C83C518001B0AA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = URLManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hz.URLManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		289E25C31C83C518001B0AA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = URLManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hz.URLManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		289E25A51C83C518001B0AA2 /* Build configuration list for PBXProject "URLManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				289E25BF1C83C518001B0AA2 /* Debug */,
+				289E25C01C83C518001B0AA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		289E25C11C83C518001B0AA2 /* Build configuration list for PBXNativeTarget "URLManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				289E25C21C83C518001B0AA2 /* Debug */,
+				289E25C31C83C518001B0AA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 289E25A21C83C518001B0AA2 /* Project object */;
+}
