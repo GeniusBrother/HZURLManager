@@ -11,7 +11,7 @@
 ##其它资源##
 * [简书论坛](http://www.jianshu.com/collection/ba017346481d)
 * [HZExtend,快速开发项目的框架,结合了MVC和MVVM的优点](https://github.com/GeniusBrother/HZExtend)
-* [HZMenuView,以UINavigationController为容器导,且导航页面时不关闭的侧边](https://github.com/GeniusBrother/HZMenuView)
+* [HZMenuView,以UINavigationController为容器,且导航页面时不关闭的侧边栏](https://github.com/GeniusBrother/HZMenuView)
 
 ##一.URL配置##
 ```objective-c
