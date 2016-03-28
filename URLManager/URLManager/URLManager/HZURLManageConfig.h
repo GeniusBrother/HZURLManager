@@ -33,4 +33,9 @@ singleton_h(Config)
  */
 @property(nonatomic, strong) NSString *classOfWebViewCtrl;
 
+/**
+ *  使用URLManager跳转时，指定下bar是否隐藏,默认NO
+ */
+@property(nonatomic, assign) BOOL hideBottomWhenPushed;
+
 @end

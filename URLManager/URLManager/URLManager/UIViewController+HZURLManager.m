@@ -42,10 +42,23 @@ static const char kQueryDic = '\1';
         viewCtrl = [[class alloc] initWithURL:[NSURL URLWithString:urlstring]];
     }else { //shchema为自定义
         NSString *strclass = [config objectForKey:urlstring.allPath];
+        NSString *errorInfo = nil;
         if(strclass.isNoEmpty) {
             Class class = NSClassFromString(strclass);
-            viewCtrl = [[class alloc] init];
+            if(NULL != class) {
+                viewCtrl = [[class alloc] init];
+            }else { //无该控制器
+                errorInfo = [NSString stringWithFormat:@"404 :) ,%@并无注册",strclass];
+            }
+        }else {//无该URL
+            errorInfo = [NSString stringWithFormat:@"404 :) ,%@://%@并无注册",urlstring.scheme,urlstring.host];
         }
+        
+        #ifdef DEBUG  // 调试状态
+            viewCtrl = viewCtrl?:[self errorViewConrtollerWithInfo:errorInfo];
+        #else // 发布状态
+
+        #endif
     }
     
     if (viewCtrl) {
@@ -58,6 +71,17 @@ static const char kQueryDic = '\1';
         return @[viewCtrl];
     }
     return nil;
+}
+
+/**
+ *  创建错误控制器
+ */
++ (UIViewController *)errorViewConrtollerWithInfo:(NSString *)errorInfo
+{
+    Class noCtrlClass = NSClassFromString(@"HZErrorViewController");
+    UIViewController *viewCtrl = [[noCtrlClass alloc] init];
+    [viewCtrl setValue:errorInfo forKey:@"errorInfo"];
+    return viewCtrl;
 }
 
 #pragma mark - Public Method

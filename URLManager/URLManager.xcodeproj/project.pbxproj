@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2883DAA71CA6307F002BEAFE /* HZErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2883DAA61CA6307F002BEAFE /* HZErrorViewController.m */; };
 		289E25AF1C83C518001B0AA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25AE1C83C518001B0AA2 /* main.m */; };
 		289E25B21C83C518001B0AA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25B11C83C518001B0AA2 /* AppDelegate.m */; };
 		289E25B51C83C518001B0AA2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25B41C83C518001B0AA2 /* ViewController.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2883DAA51CA6307F002BEAFE /* HZErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZErrorViewController.h; sourceTree = "<group>"; };
+		2883DAA61CA6307F002BEAFE /* HZErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZErrorViewController.m; sourceTree = "<group>"; };
 		289E25AA1C83C518001B0AA2 /* URLManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		289E25AE1C83C518001B0AA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		289E25B01C83C518001B0AA2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				289E25D01C83C5AF001B0AA2 /* HZWebViewController.m */,
 				289E25D11C83C5AF001B0AA2 /* UIViewController+HZURLManager.h */,
 				289E25D21C83C5AF001B0AA2 /* UIViewController+HZURLManager.m */,
+				2883DAA51CA6307F002BEAFE /* HZErrorViewController.h */,
+				2883DAA61CA6307F002BEAFE /* HZErrorViewController.m */,
 			);
 			path = URLManager;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2883DAA71CA6307F002BEAFE /* HZErrorViewController.m in Sources */,
 				289E25D61C83C5AF001B0AA2 /* HZURLNavigation.m in Sources */,
 				289E25B51C83C518001B0AA2 /* ViewController.m in Sources */,
 				289E25D31C83C5AF001B0AA2 /* HZNavigationController.m in Sources */,
@@ -362,6 +368,7 @@
 				289E25C31C83C518001B0AA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

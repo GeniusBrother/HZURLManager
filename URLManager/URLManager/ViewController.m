@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "HZURLManager.h"
+#import "NSString+HZExtend.h"
 @interface ViewController ()
 
 @end
@@ -37,6 +38,15 @@
     [dbBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     dbBtn.backgroundColor = [UIColor brownColor];
     [self.view addSubview:dbBtn];
+    
+    UIButton *errorBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    errorBtn.frame = CGRectMake((viewWidth -150)/2, (viewHeight-30)/2+80, 150, 30);
+    [errorBtn addTarget:self action:@selector(noRegister:) forControlEvents:UIControlEventTouchUpInside];
+    [errorBtn setTitle:@"URL-NoRegister" forState:UIControlStateNormal];
+    [errorBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    errorBtn.backgroundColor = [UIColor redColor];
+    [self.view addSubview:errorBtn];
+    
 }
 
 - (void)push:(UIButton *)sender
@@ -49,6 +59,12 @@
 {
     //push hz://urlItemB 到对应的控制器,并传入参数title=present
     [HZURLManager presentViewControllerWithString:@"hz://urlItemB?title=present" animated:YES completion:nil];
+}
+
+- (void)noRegister:(UIButton *)sender
+{
+    //push没有注册过的控制器或链接在开发环境会提示错误
+    [HZURLManager pushViewControllerWithString:@"hz://urlItemC?title=push" animated:YES];
 }
 
 @end
