@@ -7,14 +7,14 @@
 //
 
 #import "HZURLRewrite.h"
-#import <HZURLManageConfig.h>
+#import "HZURLManagerConfig.h"
 @implementation HZURLRewrite
 
 + (NSURL *)rewriteURLForURL:(NSURL *)url
 {
     if (!url) return nil;
     
-    NSArray *rules = [HZURLManageConfig sharedConfig].rewriteRule;
+    NSArray *rules = [HZURLManagerConfig sharedConfig].rewriteRule;
     
     if ([rules isKindOfClass:[NSArray class]] && rules.count > 0) {
         NSString *targetURL = url.absoluteString;

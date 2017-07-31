@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+HZURLManager.h"
+#import "HZURLManagerConfig.h"
 #import <HZFoundation/HZFoundation.h>
 #import "HZWebViewController.h"
 #import <objc/runtime.h>
@@ -25,7 +26,7 @@ static const char kParams = '\1';
 #pragma mark Core
 + (UIViewController *)viewControllerForURL:(NSURL *)url params:(NSDictionary *)params
 {
-    NSDictionary *config = [HZURLManageConfig sharedConfig].urlControllerConfig;
+    NSDictionary *config = [HZURLManagerConfig sharedConfig].urlControllerConfig;
     NSAssert(config.isNoEmpty, @"请先配置URL-Ctrl-Config");
     
     NSString *scheme = url.scheme;
@@ -36,11 +37,12 @@ static const char kParams = '\1';
     /*******************根据scheme创建控制器********************/
     UIViewController *viewCtrl = nil;
     if ([scheme isEqualToString:@"http"]||[scheme isEqualToString:@"https"]) {  //scheme为http
-        NSString *strWebCtrl = [HZURLManageConfig sharedConfig].classOfWebViewCtrl.isNoEmpty?[HZURLManageConfig sharedConfig].classOfWebViewCtrl:@"HZWebViewController";
+        NSString *strWebCtrl = [HZURLManagerConfig sharedConfig].classOfWebViewCtrl.isNoEmpty?[HZURLManagerConfig sharedConfig].classOfWebViewCtrl:@"HZWebViewController";
         Class class = NSClassFromString(strWebCtrl);
         viewCtrl = [[class alloc] initWithURL:url];
     }else { //shchema为自定义
-        NSString *strclass = [config objectForKeyPath:[NSString stringWithFormat:@"%@.%@%@",scheme,url.host,url.path]];
+        NSDictionary *ctrlsOfScheme = [config objectForKey:scheme];
+        NSString *strclass = [ctrlsOfScheme objectForKey:[NSString stringWithFormat:@"%@%@",url.host?:@"",url.path]];
         NSString *errorInfo = nil;
         if(strclass.isNoEmpty) {
             Class class = NSClassFromString(strclass);
@@ -67,7 +69,7 @@ static const char kParams = '\1';
         if (params.isNoEmpty) [tmpDic addEntriesFromDictionary:params];
         viewCtrl.params = tmpDic;
         viewCtrl.originURL = url.absoluteString;
-        viewCtrl.hidesBottomBarWhenPushed = [HZURLManageConfig sharedConfig].hideBottomWhenPushed;
+        viewCtrl.hidesBottomBarWhenPushed = [HZURLManagerConfig sharedConfig].hideBottomWhenPushed;
         return viewCtrl;
     }
     return nil;

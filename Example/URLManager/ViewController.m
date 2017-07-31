@@ -51,14 +51,14 @@
 
 - (void)push:(UIButton *)sender
 {
-    //push hz://urlItemB 到对应的控制器,并传入参数title=push
-    [HZURLManager pushViewControllerWithString:@"hz://urlItemB?title=push" animated:YES];
+    //push hz://page.hz/article 到对应的控制器,并传入参数title=push
+     [URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?start=1&offset=20" animated:YES];
 }
 
 - (void)present:(UIButton *)sender
 {
     //push hz://urlItemB 到对应的控制器,并传入参数title=present
-    [HZURLManager presentViewControllerWithString:@"hz://urlItemB?title=present" animated:YES completion:nil];
+    [URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?start=1&offset=20" animated:YES parmas:nil options:@{@"HZRedirectPresentMode":@(YES)} completion:nil];
 }
 
 - (void)noRegister:(UIButton *)sender

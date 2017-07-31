@@ -7,7 +7,6 @@
 //  根据URL创建控制器
 
 #import <UIKit/UIKit.h>
-#import "HZURLManageConfig.h"
 @interface UIViewController (HZURLManager)
 
 /**

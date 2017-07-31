@@ -7,14 +7,14 @@
 //
 
 #import "NSObject+HZURLHandler.h"
-#import "HZURLManageConfig.h"
+#import "HZURLManagerConfig.h"
 #import <HZFoundation/HZFoundation.h>
 @implementation NSObject (HZURLHandler)
 
 //获取URL对应的URLHandler
 + (id<HZURLHandler>)urlHandlerForURL:(NSURL *)url
 {
-    NSDictionary *config = [HZURLManageConfig sharedConfig].urlMethodConfig;
+    NSDictionary *config = [HZURLManagerConfig sharedConfig].urlMethodConfig;
     NSAssert(config.isNoEmpty, @"请先配置URL-Method-Config");
     
     NSString *host = url.host;

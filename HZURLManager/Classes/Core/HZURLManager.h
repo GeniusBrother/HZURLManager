@@ -7,8 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#ifndef HZURLManager_h
+#define HZURLManager_h
+
+#import "HZURLHandler.h"
+#import "HZURLManagerConfig.h"
+#import "HZURLManager.h"
 #import "HZURLNavigation.h"
 #import "UIViewController+HZURLManager.h"
+#import "HZNavigationController.h"
+
+#endif /* HZURLManager_h */
 @class HZViewController;
 
 #define URL_MANAGERN [HZURLManager sharedManager]

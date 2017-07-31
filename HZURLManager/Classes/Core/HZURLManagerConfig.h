@@ -11,7 +11,7 @@
 /**
  *  URLManager中的数据配置器
  */
-@interface HZURLManageConfig : NSObject
+@interface HZURLManagerConfig : NSObject
 singleton_h(Config)
 
 /** URL-Ctrl配置字典 **/

@@ -6,9 +6,9 @@
 //  Copyright © 2016年 xzh. All rights reserved.
 //
 
-#import "HZURLManageConfig.h"
+#import "HZURLManagerConfig.h"
 #import <HZFoundation/HZFoundation.h>
-@interface HZURLManageConfig ()
+@interface HZURLManagerConfig ()
 
 @property(nonatomic, copy) NSDictionary *urlControllerConfig;
 
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation HZURLManageConfig
+@implementation HZURLManagerConfig
 #pragma mark - Initialization
 singleton_m
 + (instancetype)sharedConfig
@@ -65,7 +65,6 @@ singleton_m
 {
     if (rule.isNoEmpty) [self.mutableRewriteRule addObjectsFromArray:rule];
 }
-
 
 #pragma mark - Getter
 - (NSArray *)rewriteRule

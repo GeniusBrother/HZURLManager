@@ -7,9 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "HZNavigationController.h"
 #import "ViewController.h"
-#import "HZURLManager.h"
+#import <HZURLManager/HZURLManager.h>
 @interface AppDelegate ()
 
 @end
@@ -19,21 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    /**
-//     *  URL配置
-//     */
-//    [HZURLManageConfig sharedConfig].config = @{
-//                                                @"hz://urlItemA":@"ViewController",
-//                                                @"hz://urlItemB":@"URLItemViewController"
-//                                                };
-//    
-//    //根据URL创建控制器
-//    UIViewController *rootViewCtrl = [UIViewController viewControllerWithString:@"hz://urlItemA"];
+    /**
+     *  URL配置
+     */
+    [[HZURLManagerConfig sharedConfig] loadURLCtrlConfig:[[NSBundle mainBundle] pathForResource:@"URL-Controller-Config" ofType:@"plist"] urlMethodConfig:[[NSBundle mainBundle] pathForResource:@"URL-Method-Config" ofType:@"plist"]];
+    
+    [[HZURLManagerConfig sharedConfig] addRewriteRules:@[@{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page.hz/article?$query&id=$1"}]];
+    
+    //根据URL创建控制器
+    UIViewController *rootViewCtrl = [UIViewController viewControllerForURL:[NSURL URLWithString:@"hz://page.hz/itemA"]];
 
-//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.rootViewController = [[HZNavigationController alloc] initWithRootViewController:rootViewCtrl];
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    [self.window makeKeyAndVisible];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[HZNavigationController alloc] initWithRootViewController:rootViewCtrl];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

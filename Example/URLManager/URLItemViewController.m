@@ -7,7 +7,7 @@
 //
 
 #import "URLItemViewController.h"
-#import "HZURLManager.h"
+#import <HZURLManager/HZURLManager.h>
 @interface URLItemViewController ()
 
 @end
@@ -53,7 +53,7 @@
 
 - (void)btnClick:(UIButton *)sender
 {
-    [HZURLManager dismissCurrentAnimated:YES];
+    [HZURLNavigation dismissCurrentAnimated:YES];
 }
 
 
