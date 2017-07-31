@@ -1,0 +1,1 @@
+../../../../../HZURLManager/Classes/Core/HZURLManager.h
