@@ -18,14 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    /**
-     *  URL配置
-     */
+    //加载URL配置
     [[HZURLManagerConfig sharedConfig] loadURLCtrlConfig:[[NSBundle mainBundle] pathForResource:@"URL-Controller-Config" ofType:@"plist"] urlMethodConfig:[[NSBundle mainBundle] pathForResource:@"URL-Method-Config" ofType:@"plist"]];
     
+    //添加重写规则
     [[HZURLManagerConfig sharedConfig] addRewriteRules:@[@{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page.hz/article?$query&id=$1"}]];
     
-    //根据URL创建控制器
+    //获取URL对应的控制器
     UIViewController *rootViewCtrl = [UIViewController viewControllerForURL:[NSURL URLWithString:@"hz://page.hz/itemA"]];
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

@@ -23,6 +23,8 @@
 #define URL_MANAGERN [HZURLManager sharedManager]
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString *const HZRedirectPresentMode;
+
 @interface HZURLManager : NSObject
 
 /**
@@ -53,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
            completion:(nullable void(^)())completion;
 
 /**
- *	跳转到指定界面
+ *	跳转到指定控制器
  *
  *  以push的方式进行跳转
  */

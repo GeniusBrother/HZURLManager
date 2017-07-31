@@ -51,20 +51,20 @@
 
 - (void)push:(UIButton *)sender
 {
-    //push hz://page.hz/article 到对应的控制器,并传入参数title=push
-     [URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?start=1&offset=20" animated:YES];
+    //跳转到hz://page.hz/article所对应的控制器
+     [URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?title=push" animated:YES];
+    //@"https://www.hz.com/articles/3?title=push"经过重写后对应于hz://page.hz/article
 }
 
 - (void)present:(UIButton *)sender
 {
-    //push hz://urlItemB 到对应的控制器,并传入参数title=present
-    [URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?start=1&offset=20" animated:YES parmas:nil options:@{@"HZRedirectPresentMode":@(YES)} completion:nil];
+    [URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?title=push" animated:YES parmas:nil options:@{HZRedirectPresentMode:@(YES)} completion:nil];
 }
 
 - (void)noRegister:(UIButton *)sender
 {
-    //push没有注册过的控制器或链接在开发环境会提示错误
-    [HZURLManager pushViewControllerWithString:@"hz://urlItemC?title=push" animated:YES];
+    //跳转到没有注册过的控制器时在开发环境会提示错误
+    [URL_MANAGERN redirectToURL:@"hz://urlItemC?title=push" animated:YES];
 }
 
 @end

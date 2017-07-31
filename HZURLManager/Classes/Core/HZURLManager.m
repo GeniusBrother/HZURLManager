@@ -10,6 +10,7 @@
 #import <HZFoundation/HZFoundation.h>
 #import "NSObject+HZURLHandler.h"
 #import "HZURLRewrite.h"
+NSString *const HZRedirectPresentMode = @"HZRedirectPresentMode";
 @interface HZURLManager ()
 
 
@@ -63,7 +64,7 @@ singleton_m
     NSURL *formatedURL = [self formatedURL:url];
     NSURL *rewritedURL = [HZURLRewrite rewriteURLForURL:formatedURL];
     UIViewController *viewController = [UIViewController viewControllerForURL:rewritedURL params:parmas];
-    if ([options boolValueForKeyPath:@"HZRedirectPresentMode"]) {
+    if ([options boolValueForKeyPath:HZRedirectPresentMode]) {
         [HZURLNavigation presentViewController:viewController animated:animated completion:completion];
     }else {
         [HZURLNavigation pushViewController:viewController animated:animated];
