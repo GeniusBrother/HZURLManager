@@ -1,29 +1,37 @@
 //
 //  UIViewController+HZURLManager.h
-//  ZHFramework
+//  HZURLManager <https://github.com/GeniusBrother/HZURLManager>
 //
-//  Created by xzh. on 15/8/21.
-//  Copyright (c) 2015年 xzh. All rights reserved.
-//  根据URL创建控制器
-
+//  Created by GeniusBrother on 15/8/21.
+//  Copyright (c) 2015 GeniusBrother. All rights reserved.
+//
 #import <UIKit/UIKit.h>
+NS_ASSUME_NONNULL_BEGIN
+/**
+ Provides view controller for `HZURLManager`.
+ */
 @interface UIViewController (HZURLManager)
 
 /**
- *  控制器所对应的URL
+ The URL corresponding to the Controller
  */
 @property(nonatomic, strong, readonly) NSString *originURL;
 
 /**
- *  由查询字符串和跳转时传入的NSDictionary组成
+ Consists of a query string and additional parameters passed by user.
  */
 @property(nonatomic, strong, readonly) NSDictionary *params;
 
 /**
- *  获取URL所对应的控制器
- *  params到时候可通过控制器的params属性获得
+ Returns the controller corresponding to the URL.
+ 
+ @discussion Before use the method, you should registe the URL in {"scheme":{"host/path":"ViewControllerName"}} format in plist file, ViewControllerName is a name of view controller. Then load it through HZURLManagerConfig.
+ 
+ @param parmas Additional parameters passed to Controller.
  */
 + (UIViewController *)viewControllerForURL:(NSURL *)url;
 + (UIViewController *)viewControllerForURL:(NSURL *)url params:(NSDictionary *)params;
 
 @end
+
+NS_ASSUME_NONNULL_END

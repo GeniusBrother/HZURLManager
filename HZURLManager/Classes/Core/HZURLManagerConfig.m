@@ -1,9 +1,9 @@
 //
 //  HZURLManageConfig.m
-//  HZNetworkDemo
+//  HZURLManager <https://github.com/GeniusBrother/HZURLManager>
 //
-//  Created by xzh on 16/2/27.
-//  Copyright © 2016年 xzh. All rights reserved.
+//  Created by GeniusBrother on 2016/2/27.
+//  Copyright (c) 2016 GeniusBrother. All rights reserved.
 //
 
 #import "HZURLManagerConfig.h"

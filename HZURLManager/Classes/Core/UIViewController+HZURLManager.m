@@ -1,9 +1,9 @@
 //
 //  UIViewController+HZURLManager.m
-//  ZHFramework
+//  HZURLManager <https://github.com/GeniusBrother/HZURLManager>
 //
-//  Created by xzh. on 15/8/21.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 15/8/21.
+//  Copyright (c) 2015 GeniusBrother. All rights reserved.
 //
 
 #import "UIViewController+HZURLManager.h"
@@ -36,31 +36,36 @@ static const char kParams = '\1';
     
     /*******************根据scheme创建控制器********************/
     UIViewController *viewCtrl = nil;
-    if ([scheme isEqualToString:@"http"]||[scheme isEqualToString:@"https"]) {  //scheme为http
-        NSString *strWebCtrl = [HZURLManagerConfig sharedConfig].classOfWebViewCtrl.isNoEmpty?[HZURLManagerConfig sharedConfig].classOfWebViewCtrl:@"HZWebViewController";
-        Class class = NSClassFromString(strWebCtrl);
-        viewCtrl = [[class alloc] initWithURL:url];
-    }else { //shchema为自定义
-        NSDictionary *ctrlsOfScheme = [config objectForKey:scheme];
-        NSString *strclass = [ctrlsOfScheme objectForKey:[NSString stringWithFormat:@"%@%@",url.host?:@"",url.path]];
-        NSString *errorInfo = nil;
-        if(strclass.isNoEmpty) {
-            Class class = NSClassFromString(strclass);
-            if(NULL != class) {
-                viewCtrl = [[class alloc] init];
-            }else { //无该控制器
-                errorInfo = [NSString stringWithFormat:@"404 :) ,%@并无该类",strclass];
+    NSDictionary *ctrlsOfScheme = [config objectForKey:scheme];
+    NSString *strClass = [ctrlsOfScheme objectForKey:[NSString stringWithFormat:@"%@%@",url.host?:@"",url.path]];
+    NSString *errorInfo = nil;
+    if(strClass.isNoEmpty) {    //判断配置文件里有无指定配置
+        Class class = NSClassFromString(strClass);
+        if(NULL != class) {
+            viewCtrl = [[class alloc] init];
+        }else { //无该控制器
+            errorInfo = [NSString stringWithFormat:@"404 :) ,%@并无该类",strClass];
+        }
+    }else {
+        if ([scheme isEqualToString:@"http"]||[scheme isEqualToString:@"https"]) {  //判断是否配置了默认的webViewController
+            NSString *strWebCtrl = [HZURLManagerConfig sharedConfig].classOfWebViewCtrl;
+            if (strWebCtrl.isNoEmpty) {
+                Class class = NSClassFromString(strWebCtrl);
+                viewCtrl = [[class alloc] initWithURL:url];
+            }else {
+                errorInfo = [NSString stringWithFormat:@"404 :) ,%@://%@并无注册",url.scheme,url.host];
             }
-        }else {//无该URL
+
+        }else { //shcheme为自定义
             errorInfo = [NSString stringWithFormat:@"404 :) ,%@://%@并无注册",url.scheme,url.host];
         }
-        
-        #ifdef DEBUG  // 调试状态
-        viewCtrl = viewCtrl?:[self errorViewConrtollerWithInfo:errorInfo];
-        
-        #else // 发布状态
-        #endif
     }
+    
+#ifdef DEBUG  // 调试状态
+    viewCtrl = viewCtrl?:[self errorViewConrtollerWithInfo:errorInfo];
+    
+#else // 发布状态
+#endif
     
     if (viewCtrl) {
         NSMutableDictionary *tmpDic = [NSMutableDictionary dictionary];

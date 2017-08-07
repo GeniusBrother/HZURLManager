@@ -1,9 +1,9 @@
 //
 //  HZURLManager.h
-//  ZHFramework
+//  HZURLManager <https://github.com/GeniusBrother/HZURLManager>
 //
-//  Created by xzh. on 15/8/21.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 2015/8/21.
+//  Copyright (c) 2015 GeniusBrother. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -19,48 +19,58 @@
 
 #endif /* HZURLManager_h */
 @class HZViewController;
-
 #define URL_MANAGERN [HZURLManager sharedManager]
-NS_ASSUME_NONNULL_BEGIN
 
+NS_ASSUME_NONNULL_BEGIN
 extern NSString *const HZRedirectPresentMode;
 
+/**
+ `HZURLManager` is an URL routing library for iOS,support URL rewrite.
+ */
 @interface HZURLManager : NSObject
 
 /**
- * 获取HZURLManager单例
+ Returns global HZURLManager instance.
+ 
+ @return HZURLManager shared instance
  */
 + (instancetype)sharedManager;
 
-/**
- *	调用模块方法
- *
- *	@param url  与模块方法相对应的URL
- */
-- (id)handleURL:(NSString *)url withTarget:(id)target withParams:(nullable id)parmas;
 
 /**
- *	跳转到指定界面
- *
- *	@param url  与界面相对应的URL
- *  @param animated 指定跳转时是否有动画
- *  @param parmas
- *  @param options 若HZRedirectPresentMode = YES,则以present方式跳转
- *  @param completion 当以present方式跳转时，完成跳转后调用
+ Calls module method specified by the given URL.
+ 
+ @discussion Before use the method, you should registe the URL in {"scheme":{"host/path":"URLHandlerName"}} format in plist file, URLHandlerName is a name of class which implement HZURLHandler protocol. Then load it through HZURLManagerConfig.
+ 
+ @param URL The URL corresponding to the module method.
+ @param target The object of using HZURLManager
+ @param params Additional parameters passed to URLHandler
  */
-- (void)redirectToURL:(NSString *)url
+- (id)handleURL:(NSString *)URL withTarget:(id)target withParams:(nullable id)params;
+
+/**
+ Navigate to the controller corresponding to the URL
+
+ @discussion Before use the method, you should registe the URL in {"scheme":{"host/path":"ViewControllerName"}} format in plist file, ViewControllerName is a name of view controller. Then load it through HZURLManagerConfig.
+ 
+ @param URL The URL corresponding to the Controller
+ @param animated Specify YES to animate the transition or NO if you do not want the transition to be animated.
+ @param parmas Additional parameters passed to Controller. You can get the parmas by `pramas`  property see `UIViewController+HZURLManager.h` for more information.
+
+ @param options Specify HZRedirectPresentMode equal YES to transition by present way.
+ @param completion The block to execute after the presentation finishes.
+ */
+- (void)redirectToURL:(NSString *)URL
              animated:(BOOL)animated
                parmas:(nullable NSDictionary *)parmas
               options:(nullable NSDictionary *)options
            completion:(nullable void(^)())completion;
 
 /**
- *	跳转到指定控制器
- *
- *  以push的方式进行跳转
+ Navigate to the controller corresponding to the URL by push way.
  */
-- (void)redirectToURL:(NSString *)url animated:(BOOL)animated params:(nullable NSDictionary *)params;
-- (void)redirectToURL:(NSString *)url animated:(BOOL)animated;
+- (void)redirectToURL:(NSString *)URL animated:(BOOL)animated params:(nullable NSDictionary *)params;
+- (void)redirectToURL:(NSString *)URL animated:(BOOL)animated;
 
 
 @end

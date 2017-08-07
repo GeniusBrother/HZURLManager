@@ -1,9 +1,9 @@
 //
 //  HZURLManager.m
-//  ZHFramework
+//  HZURLManager <https://github.com/GeniusBrother/HZURLManager>
 //
-//  Created by xzh. on 15/8/21.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 2015/8/21.
+//  Copyright (c) 2015 GeniusBrother. All rights reserved.
 //
 
 #import "HZURLManager.h"

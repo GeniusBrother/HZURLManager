@@ -1,50 +1,56 @@
 //
 //  HZURLManageConfig.h
-//  HZNetworkDemo
+//  HZURLManager <https://github.com/GeniusBrother/HZURLManager>
 //
-//  Created by xzh on 16/2/27.
-//  Copyright © 2016年 xzh. All rights reserved.
+//  Created by GeniusBrother on 2016/2/27.
+//  Copyright (c) 2016 GeniusBrother. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <HZFoundation/HZSingleton.h>
 /**
- *  URLManager中的数据配置器
+ Provides Configs for `HZURLManager`
  */
 @interface HZURLManagerConfig : NSObject
 singleton_h(Config)
 
-/** URL-Ctrl配置字典 **/
+/** URL-Ctrl config */
 @property(nonatomic, readonly) NSDictionary *urlControllerConfig;
 
-/** URL-Method配置字典 **/
+/** URL-Method config */
 @property(nonatomic, readonly) NSDictionary *urlMethodConfig;
 
-/** URL重写规则数组 **/
+/** URL rewrite rule */
 @property(nonatomic, readonly) NSArray *rewriteRule;
 
 /**
- *  配置http所对应的Ctrl名称
+ The default name of Controller corresponding to the http(s) URL.
  */
 @property(nonatomic, strong) NSString *classOfWebViewCtrl;
 
 /**
- *  使用URLManager跳转时，指定下bar是否隐藏,默认YES
+ A Boolean value indicating whether the toolbar at the bottom of the screen is hidden when the view controller is pushed through URLManager on to a navigation controller. Default is YES.
  */
 @property(nonatomic, assign) BOOL hideBottomWhenPushed;
 
 /**
- *	加载URLController和URLMethod配置
- *
- *	@param ctrlPath URL-Controller-Config.plist文件的路径
- *  @param methodPath URL-Method-Config.plist文件的路径
+ Loads config of URL-Controller and URL-Method.
+ 
+ @param ctrlPath the path of URL-Controller-Config.plist
+ @param methodPath the path of URL-Method-Config.plist
  */
 - (void)loadURLCtrlConfig:(NSString *)ctrlPath urlMethodConfig:(NSString *)methodPath;
 
 /**
- *	添加重写规则
- *
- *	@param rule 重写规则,规则形式见文档
+ Adds URL rewrite rule
+ 
+ @discussion Each rewrite rule is represented by a dictionary, and the match key corresponds to the regular expression of the matching source URL The target key corresponds to the format of the new URL.
+ 
+ The variable can be used in the target and starts with $, For example, $ 1 ... $ n represents the value of the corresponding tuple in the regular expression, $ query represents the query string part in the URL. 
+ 
+ For example, when the @{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page.hz/article?$query&id=$1"} rule is applied, the rewrite engine rewrites the source URL as hz://page.hz/article?title=cool&id=3 when we redirect to https://ww.hz.com/articles/3?title=cool , Finally we'll jump to hz://page.hz/article?title=cool&id=3.
+ 
+ @param rule The Rule of URL rewrite. see discussion for more information.
  */
 - (void)addRewriteRules:(NSArray *)rule;
 

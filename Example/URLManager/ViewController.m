@@ -46,7 +46,7 @@
     [errorBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     errorBtn.backgroundColor = [UIColor redColor];
     [self.view addSubview:errorBtn];
-    
+
 }
 
 - (void)push:(UIButton *)sender

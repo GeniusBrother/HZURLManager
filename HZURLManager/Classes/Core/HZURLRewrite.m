@@ -1,9 +1,9 @@
 //
 //  HZURLRewrite.m
-//  Pods
+//  HZURLManager <https://github.com/GeniusBrother/HZURLManager>
 //
-//  Created by xzh on 2017/7/30.
-//
+//  Created by GeniusBrother on 2017/7/28.
+//  Copyright (c) 2017 GeniusBrother. All rights reserved.
 //
 
 #import "HZURLRewrite.h"
