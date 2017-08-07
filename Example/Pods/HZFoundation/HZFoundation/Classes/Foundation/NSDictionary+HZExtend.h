@@ -1,9 +1,9 @@
 //
 //  NSDictionary+HZExtend.h
-//  ZHFramework
+//  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
-//  Created by xzh. on 15/7/26.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 15/7/26.
+//  Copyright (c) 2015 GeniusBrother. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,49 +11,77 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ Provide some some common method for `NSDictionary`.
+ */
 @interface NSDictionary (HZExtend)
 
 /**
- *  获取字典元素
- *  如果字典有多个层级，通过.来组合key,如 @{ @“person”:@{@"name":@"GeniusBrotherHZExtend"}} 则可以通过person.name 来获取GeniusBrotherHZExtend
+ Returns the Object specified by the given keyPath.
+ 
+ @param keyPath A key path of the form relationship.property (with one or more relationships); for example “department.name” or “department.manager.lastName”.
  */
 - (nullable id)objectForKeyPath:(NSString *)keyPath;
 
 /**
- *  不存在,则返回other
+ Returns the Object specified by the given keyPath. return def object if no object is found.
+ 
+ @param keyPath A key path of the form relationship.property (with one or more relationships); for example “department.name” or “department.manager.lastName”.
+ @param def Returns def if no object is found.
  */
-- (nullable id)objectForKeyPath:(NSString *)path otherwise:(NSObject *)other;
+- (nullable id)objectForKeyPath:(NSString *)keyPath otherwise:(id)def;
 
 /**
- *  获取integer元素
- *  确保元素存在时使用
+ Returns the integer value specified by the given keyPath. return def if no value is found.
+ 
+ @param keyPath A key path of the form relationship.property (with one or more relationships); for example “department.name” or “department.manager.lastName”.
+ @param def Returns def if no object is found.
  */
-- (NSInteger)integerValueForKeyPath:(NSString *)keyPath;
+- (NSInteger)integerValueForKeyPath:(NSString *)keyPath default:(NSInteger)def;
 
 /**
- *  获取double元素
- *  确保元素存在时使用
+ Returns the double value specified by the given keyPath. return def if no value is found.
+ 
+ @param keyPath A key path of the form relationship.property (with one or more relationships); for example “department.name” or “department.manager.lastName”.
+ @param def Returns def if no object is found.
  */
-- (double)doubleValueForKeyPath:(NSString *)keyPath;
+- (double)doubleValueForKeyPath:(NSString *)keyPath default:(double)def;
+- (float)floatValueForKey:(NSString *)keyPath default:(float)def;
 
 /**
- *  获取bool元素
- *  确保元素存在时使用
+ Returns the bool value specified by the given keyPath. return def if no value is found.
+ 
+ @param keyPath A key path of the form relationship.property (with one or more relationships); for example “department.name” or “department.manager.lastName”.
+ @param def Returns def if no object is found.
  */
-- (BOOL)boolValueForKeyPath:(NSString *)keyPath;
+- (BOOL)boolValueForKeyPath:(NSString *)keyPath default:(BOOL)def;
+
+/**
+ Returns the long long value specified by the given keyPath. return def if no value is found.
+ 
+ @param keyPath A key path of the form relationship.property (with one or more relationships); for example “department.name” or “department.manager.lastName”.
+ @param def Returns def if no object is found.
+ */
+- (long)longLongValueForKey:(NSString *)keyPath default:(long)def;
 
 
 /**
- *	将字典装换成查询字符串
- *
- *	@return 返回简单的查询字符串如:name=xzh&age=21,如果自身为空，则返回nil
+ Returns a new dictionary containing the entries for keys.
+ return nil if the keys is empty or nil.
+ 
+ @param keys The keys.
+ */
+- (nullable NSDictionary *)entriesForKeys:(NSArray *)keys;
+
+/**
+ Returns a string in key1=value1&key2=value2... format. return nil if an empty dictionary.
  */
 - (nullable NSString *)keyValueString;
 
 /**
- *	将字典装换成json字符串
+ Converts dictionary to json string. return nil if an error occurs.
  */
-- (NSString *)jsonString;
+- (nullable NSString *)jsonString;
 
 
 @end

@@ -1,9 +1,9 @@
 //
-//  NSData+HzExtend.h
-//  ZHFramework
+//  NSData+HZExtend.h
+//  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
-//  Created by xzh. on 15/7/26.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 15/7/26.
+//  Copyright (c) 2015 GeniusBrother. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,19 +11,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ Provide some some common method for `NSData`.
+ */
 @interface NSData (HZExtend)
 
 /**
- *  进行MD5加密
- *  
- *  @return 返回NSData类型实例
+ Returns an NSData for md5 hash.
  */
-- (NSData *)md5;
+- (NSData *)md5Data;
 
 /**
- *  进行MD5加密
- *
- *  @return 返回NSData类型实例
+ Returns a NSString for md5 hash.
  */
 - (NSString *)md5String;
 

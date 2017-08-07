@@ -10,7 +10,7 @@
 #import <CommonCrypto/CommonDigest.h>
 @implementation NSData (HZExtend)
 
-- (NSData *)md5
+- (NSData *)md5Data
 {
     unsigned char	md5Result[CC_MD5_DIGEST_LENGTH + 1];
     CC_LONG			md5Length = (CC_LONG)[self length];
@@ -23,7 +23,7 @@
 
 - (NSString *)md5String
 {
-    NSData * value = [self md5];
+    NSData * value = [self md5Data];
     char			tmp[16];
     unsigned char *	hex = (unsigned char *)malloc( 2048 + 1 );
     unsigned char *	bytes = (unsigned char *)[value bytes];

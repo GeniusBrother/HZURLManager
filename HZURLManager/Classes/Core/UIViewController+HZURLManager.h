@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param parmas Additional parameters passed to Controller.
  */
 + (UIViewController *)viewControllerForURL:(NSURL *)url;
-+ (UIViewController *)viewControllerForURL:(NSURL *)url params:(NSDictionary *)params;
++ (UIViewController *)viewControllerForURL:(NSURL *)url params:(nullable NSDictionary *)params;
 
 @end
 

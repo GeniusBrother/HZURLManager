@@ -1,23 +1,24 @@
 //
 //  NSURL+HZExtend.h
-//  ZHFramework
+//  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
-//  Created by xzh. on 15/8/21.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 15/8/21.
+//  Copyright (c) 2015 GeniusBrother. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSURL (HZExtend)
 
+/** Returns absoluteString but not contain the part of query. */
+@property(nonatomic, readonly) NSString *allPath;
+
 /**
- *  获取查询参数
- *
- *  @return 返回NSDictionary类型实例
+ Return a Dictionary which contains query params
  */
-- (NSDictionary *)queryDic;
+- (nullable NSDictionary *)queryDic;
+
 
 @end
 

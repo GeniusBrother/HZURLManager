@@ -18,7 +18,7 @@
     return result;
 }
 
-- (id)objectForKeyPath:(NSString *)keyPath otherwise:(NSObject *)other
+- (id)objectForKeyPath:(NSString *)keyPath otherwise:(id)other
 {
     NSObject *obj = [self objectForKeyPath:keyPath];
     
@@ -50,36 +50,58 @@
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 }
 
-- (NSInteger)integerValueForKeyPath:(NSString *)keyPath
+- (NSInteger)integerValueForKeyPath:(NSString *)keyPath default:(NSInteger)def
 {
     id value = [self objectForKeyPath:keyPath];
     
     if ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]]) {
         return [value integerValue];
     }else {
-        return NSNotFound;
+        return def;
     }
 }
 
-- (BOOL)boolValueForKeyPath:(NSString *)keyPath
+- (long)longLongValueForKey:(NSString *)keyPath default:(long)def
+{
+    id value = [self objectForKeyPath:keyPath];
+    
+    if ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]]) {
+        return [value longLongValue];
+    }else {
+        return def;
+    }
+}
+
+- (BOOL)boolValueForKeyPath:(NSString *)keyPath default:(BOOL)def
 {
     id value = [self objectForKeyPath:keyPath];
 
     if ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]]) {
         return [value boolValue];
     }else {
-        return NO;
+        return def;
     }
 }
 
-- (double)doubleValueForKeyPath:(NSString *)keyPath
+- (double)doubleValueForKeyPath:(NSString *)keyPath default:(double)def
 {
     id value = [self objectForKeyPath:keyPath];
     
     if ([value isKindOfClass:[NSNumber class]]) {
         return [value doubleValue];
     }else {
-        return MAXFLOAT;
+        return def;
+    }
+}
+
+- (float)floatValueForKey:(NSString *)keyPath default:(float)def
+{
+    id value = [self objectForKeyPath:keyPath];
+    
+    if ([value isKindOfClass:[NSNumber class]]) {
+        return [value floatValue];
+    }else {
+        return def;
     }
 }
 

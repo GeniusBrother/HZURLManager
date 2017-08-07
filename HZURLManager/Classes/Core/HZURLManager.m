@@ -64,7 +64,7 @@ singleton_m
     NSURL *formatedURL = [self formatedURL:url];
     NSURL *rewritedURL = [HZURLRewrite rewriteURLForURL:formatedURL];
     UIViewController *viewController = [UIViewController viewControllerForURL:rewritedURL params:parmas];
-    if ([options boolValueForKeyPath:HZRedirectPresentMode]) {
+    if ([options boolValueForKeyPath:HZRedirectPresentMode default:NO]) {
         [HZURLNavigation presentViewController:viewController animated:animated completion:completion];
     }else {
         [HZURLNavigation pushViewController:viewController animated:animated];

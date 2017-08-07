@@ -9,7 +9,6 @@
 #import "UIViewController+HZURLManager.h"
 #import "HZURLManagerConfig.h"
 #import <HZFoundation/HZFoundation.h>
-#import "HZWebViewController.h"
 #import <objc/runtime.h>
 
 static const char kOriginURL = '\0';
