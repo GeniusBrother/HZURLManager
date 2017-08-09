@@ -36,13 +36,13 @@ singleton_h(Config)
 /**
  Loads config of URL-Controller and URL-Method.
  
- @param ctrlPath the path of URL-Controller-Config.plist
- @param methodPath the path of URL-Method-Config.plist
+ @param ctrlPath the path of URL-Controller-Config.plist.
+ @param methodPath the path of URL-Method-Config.plist.
  */
 - (void)loadURLCtrlConfig:(NSString *)ctrlPath urlMethodConfig:(NSString *)methodPath;
 
 /**
- Adds URL rewrite rule
+ Adds URL rewrite rule.
  
  @discussion Each rewrite rule is represented by a dictionary, and the match key corresponds to the regular expression of the matching source URL The target key corresponds to the format of the new URL.
  

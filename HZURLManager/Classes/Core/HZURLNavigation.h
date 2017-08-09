@@ -12,12 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HZURLNavigation : NSObject
 /**
- Returns the current UIViewController
+ Returns the current UIViewController.
  */
 + (UIViewController *)currentViewController;
 
 /**
- Returns the current UINavigationController
+ Returns the current UINavigationController.
  */
 + (nullable UINavigationController *)currentNavigationViewController;
 
