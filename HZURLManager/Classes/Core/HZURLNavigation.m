@@ -7,7 +7,6 @@
 //
 
 #import "HZURLNavigation.h"
-#import "NSArray+HZExtend.h"
 @implementation HZURLNavigation
 
 #pragma mark - 获得控制器
@@ -70,7 +69,7 @@
 
 + (void)pushViewControllerArray:(NSArray *)viewControllers animated:(BOOL)animated replace:(BOOL)replace
 {
-    if (!viewControllers.isNoEmpty) return;
+    if (!viewControllers) return;
     
     UINavigationController *currentNav = [self currentNavigationViewController];
     if (!currentNav) return;

@@ -9,54 +9,54 @@
 /* Begin PBXBuildFile section */
 		004AD26E03053C83B3C6CF7E3EB022AD /* UIApplication+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E56721A67F9FEEBDF06647453333E /* UIApplication+HZExtend.m */; };
 		01C00DB556C48C596A30BFB854B0842E /* NSDictionary+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F77BF9D7292C38F839712228DE2C9E /* NSDictionary+HZExtend.m */; };
-		068C7C200D7DDF96D1F111CAAA162953 /* HZURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 963D6B941A8A7156762DD31EC5D7D96A /* HZURLManager.m */; };
 		08C6635E02CF5CC8BF587EE3743ECD90 /* UIDevice+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 995AA7900C8D3F26F4F826681B5F574B /* UIDevice+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DDBEB69A2BFC0E34D0ADBC9FC97A63B /* HZURLNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF2B753DFC73A14CEF1044E0D719DE /* HZURLNavigation.m */; };
 		0EC8A204991C90B4893DAAC4A8538FAC /* UIColor+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = C256788EC1790181C984F9731D9BBE3F /* UIColor+HZExtend.m */; };
-		0F538D0DD929ADDE4A35A7A1D96906A5 /* HZErrorViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B8508106FE4EFBE0FD3658DA50F9923D /* HZErrorViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C11787879B5B4D683F6713300C9BEB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		21844A31437118D2D05338C781A1ACD7 /* HZMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 80D488095D27B46083F29A956AF5579A /* HZMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		283DB8A857DB0F7A754F50AF43C6DC02 /* NSData+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71E38A000C8428D582DE7BC3B7AC61 /* NSData+HZExtend.m */; };
 		2ED19C53004F58DF69F208E046BB937C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		30AF959430B171A543D92274AE3E8641 /* UIViewController+HZURLManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 703E18C05D9FB79B3CAF05E8223F394F /* UIViewController+HZURLManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39A515AC1A2392FD9259B8838473F50E /* HZURLRewrite.h in Headers */ = {isa = PBXBuildFile; fileRef = 149BD9A1A6BC1CDB5E8DC31F0F19D0C4 /* HZURLRewrite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BE38C2ACC1625483B90F6C93E8132B5 /* NSObject+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 467C6C4204ED400E86AD1455045DE057 /* NSObject+HZExtend.m */; };
 		4DE8242FE45FA435AF2357ADE192CC36 /* NSURL+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD3EA6654A5ABAD34490AE572C891A /* NSURL+HZExtend.m */; };
 		53CC956F341F3CDB1EAE31227B2A820F /* NSString+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A20D69745DE3E88F89ECB9D556CBC5 /* NSString+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57491D3120720AE41680A1B28FFCA1C9 /* NSObject+HZURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B153CEFB3C4909DF5A2CFD4A3036C90E /* NSObject+HZURLHandler.m */; };
+		5ABEA5171D15269A9F58AB0180484E1C /* HZURLRewrite.h in Headers */ = {isa = PBXBuildFile; fileRef = 149BD9A1A6BC1CDB5E8DC31F0F19D0C4 /* HZURLRewrite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E7D9BAC26BB166F32CBECF4E90C39A4 /* UIView+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = CC560AE6F503EA2A9ED815045DBA93F5 /* UIView+HZExtend.m */; };
 		6C19E06D7FDA4665B39C882177E85764 /* NSObject+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B787454B653A21904B4BB914FBA8E6A /* NSObject+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D9BB1BBA9F96CB312FDE0C115E34E89 /* HZURLHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = ABF3104B7594495CD8E7F463BC29C7EB /* HZURLHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E486B65696C5A6A2F9E2144EEFF4E8F /* HZURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 963D6B941A8A7156762DD31EC5D7D96A /* HZURLManager.m */; };
+		6F7448A94D192A933F7721E3BE29B0BC /* HZErrorViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B8508106FE4EFBE0FD3658DA50F9923D /* HZErrorViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70043EE4297F2F93781AF958BE1FA94B /* NSDate+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A6E0C79A44E611724E696B9891BB28 /* NSDate+HZExtend.m */; };
+		7179EBA91172C61C4A507D622B1675F2 /* HZURLRewrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F79669887AFEC21B1470C06792896A9 /* HZURLRewrite.m */; };
 		72E5A3A1EF054E8B06DEDC63EBCFE169 /* NSDate+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 26AF2D41CD6BD13C219B415820E38E19 /* NSDate+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7AE8CDF00EEAB24B655778B1F5BA93FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		7A5DD7E701B3CEED0B177EC826CC5238 /* HZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013D2C805886B55DEA46FD7C1D790195 /* HZNavigationController.m */; };
 		7F00942338591DA16E3BD4B877C7F731 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		80557D0AFF61460A83269896E9273EC0 /* HZURLHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = ABF3104B7594495CD8E7F463BC29C7EB /* HZURLHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		892086EA4DBBAD1F58A8855F1EB04A69 /* HZURLManagerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5EFB61BD81E4FCBE5D14A4AAB9EF21 /* HZURLManagerConfig.m */; };
+		88DB2E88FE7D1225A74AF674D9A8F74A /* HZURLNavigation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F585BC8E66B3060DB3EC1F51D5A8B22 /* HZURLNavigation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B0407DF19DF05308CDFF7A0D2A4A97C /* NSData+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E3E872969CB3867A5FF6A2901C75A90 /* NSData+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9027B1AF471ACA69EE4B425429645712 /* HZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013D2C805886B55DEA46FD7C1D790195 /* HZNavigationController.m */; };
+		8F636E104C86939A31823AA8E2DB32C4 /* NSObject+HZURLHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B21C9137A7F263BED6A724BD71DFDD /* NSObject+HZURLHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91135D0EC907448436E7193AD4FFFE42 /* HZURLManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 421EAFE83F88CAD0362DEC2B6D08FF4A /* HZURLManager-dummy.m */; };
+		9149049286B221CF8F201B041E38A0D9 /* HZURLNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF2B753DFC73A14CEF1044E0D719DE /* HZURLNavigation.m */; };
+		92F04A87FD477BD2CE590DA5A98ADC00 /* HZNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9899CFACCF5800C22776A341C4D64060 /* HZNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93E1E413598C8174AA47DFA36B41B9A6 /* HZFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C059B0BCF9C340BF3EC62194120B7B8 /* HZFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9421A3C0ECBF814FFF62882C3D2CA0F8 /* HZURLNavigation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F585BC8E66B3060DB3EC1F51D5A8B22 /* HZURLNavigation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98EFB1E51928FB9CF1571EE9B16D7763 /* HZFoundation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56283A6007784E374D3B0D1427BCAB88 /* HZFoundation-dummy.m */; };
-		A040AF89455AE03745BEDF0F0EA76A49 /* HZURLManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 92EE89D0CC1A0E23979EF0C0D0144EF6 /* HZURLManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F562F5C25BE8F9C5681698A9F64A754 /* HZURLManagerConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E9460828150FB9AE74ACFA51F43056 /* HZURLManagerConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A444A5BA99860442EB2E575B3DD01226 /* NSArray+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D0FDD931E435B838C43FD8848A741 /* NSArray+HZExtend.m */; };
-		A60C33EB4246341C8E170C1C119CBE6E /* HZErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DDDC7F285BAF39C94272AB106D4BAF /* HZErrorViewController.m */; };
 		A7069264B4DC3BCA83068614838E396B /* NSTimer+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = E6852DD655184C9D8398FFA9C27B3308 /* NSTimer+HZExtend.m */; };
 		AB42F71835CF607C821E6DF765E2B32B /* NSTimer+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = C423C33D75D7D1EB37C330F2E8B268BE /* NSTimer+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B002AB0376559852B580C2DAC5C64532 /* NSURL+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 5212D1E5DAFE1CD50EB17ED9E69FA7C5 /* NSURL+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1A7FA1DCCBE7AAF80DF1CFDF41C065C /* HZErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DDDC7F285BAF39C94272AB106D4BAF /* HZErrorViewController.m */; };
 		B20BBCFEDC16F4C202566F8884E2201A /* NSArray+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E3C61BF4947099E6820F7EBD1FE8F54 /* NSArray+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3760636FB22BBBFB567935A49753236 /* HZSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = 98D4DA1900C7D352E819EA00092A6825 /* HZSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B844333166496E711C49AAD552C69DCF /* Pods-URLManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D99907D798432696C5218A8EC296C0 /* Pods-URLManager-dummy.m */; };
+		BF327993DCF39DF04618DB35E3546B44 /* UIViewController+HZURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD744952A1CE32A23B6292C6E08931 /* UIViewController+HZURLManager.m */; };
 		C19B74B940A1A9A31DE8ABC35AB81484 /* NSString+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA1D33E67C198D515CDB52C37A2400D /* NSString+HZExtend.m */; };
-		C741E2835A233E7EFB7242FFD6E923AE /* HZURLRewrite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F79669887AFEC21B1470C06792896A9 /* HZURLRewrite.m */; };
-		CFC02FD328F16E28F0E9A323C96169DE /* NSObject+HZURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B153CEFB3C4909DF5A2CFD4A3036C90E /* NSObject+HZURLHandler.m */; };
-		D32B3E318E3ACBBB6D81A756859B4998 /* NSObject+HZURLHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = E4B21C9137A7F263BED6A724BD71DFDD /* NSObject+HZURLHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC20BD623DBF543886D6A56E3065C6DA /* UIApplication+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EC8FABBFCF779EBDA908C6F6FC5FE3A /* UIApplication+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E56993153EDB2C2230060535DB18B5FC /* HZNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9899CFACCF5800C22776A341C4D64060 /* HZNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF876DEC7FA5AEC92DC65BEC82402761 /* HZURLManagerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5EFB61BD81E4FCBE5D14A4AAB9EF21 /* HZURLManagerConfig.m */; };
 		E64D1DBC1600FDB861EA2DD94B450298 /* UIDevice+HZExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 748E7D2EF959EA81048AD81B679CA202 /* UIDevice+HZExtend.m */; };
-		EB567EE22595A146DA4CBA39C88A9450 /* HZURLManagerConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = C8E9460828150FB9AE74ACFA51F43056 /* HZURLManagerConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB8BEB3381AABC2DC00D206EE52D4E79 /* NSDictionary+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EC300C55FF16EB5AAD4B9202E7AA42 /* NSDictionary+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F25360E006ED2BD8BAB7BE7E99F78CA3 /* HZURLManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 92EE89D0CC1A0E23979EF0C0D0144EF6 /* HZURLManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2A1C417CCF9239A8B7FF53BFDDC2B90 /* UIColor+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 80585C302DF46BD77A72DBB1FEFE6660 /* UIColor+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F42C0D574153C8E1E01702B8CD7A5F33 /* UIViewController+HZURLManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 703E18C05D9FB79B3CAF05E8223F394F /* UIViewController+HZURLManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9ED32FA749D8F88999D331E84262B75 /* UIView+HZExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 5604B3F90DDBA3D17480B4129E0C098F /* UIView+HZExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FCF269A0D78D829151CA1396A9EAC4E3 /* HZURLManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 421EAFE83F88CAD0362DEC2B6D08FF4A /* HZURLManager-dummy.m */; };
-		FFA737D24B4DE599F05388E6E47B77C1 /* UIViewController+HZURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD744952A1CE32A23B6292C6E08931 /* UIViewController+HZURLManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,18 +67,11 @@
 			remoteGlobalIDString = 19E3185701D09A71981CB1525B23C6AB;
 			remoteInfo = HZFoundation;
 		};
-		9F664AAFC378C2B8BE04B91945F87CB3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19E3185701D09A71981CB1525B23C6AB;
-			remoteInfo = HZFoundation;
-		};
 		BBCA67B2930760D2D90CF8E1A65237EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8949BDC5BBFDAE281F9981DDD35013D4;
+			remoteGlobalIDString = 001A1218B1321BCE172E462538A656C6;
 			remoteInfo = HZURLManager;
 		};
 /* End PBXContainerItemProxy section */
@@ -149,6 +142,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2BA0ABDCA1C94FA017B738ACCB9E96CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C11787879B5B4D683F6713300C9BEB9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63ACF7A938BE678875437474189106AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,14 +163,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F00942338591DA16E3BD4B877C7F731 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B794A4E0FC8FDCEC4ADAB9E503D5D60F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7AE8CDF00EEAB24B655778B1F5BA93FC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +369,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0A2A9C8F345FE126F8C6A28940F030F9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7448A94D192A933F7721E3BE29B0BC /* HZErrorViewController.h in Headers */,
+				92F04A87FD477BD2CE590DA5A98ADC00 /* HZNavigationController.h in Headers */,
+				6D9BB1BBA9F96CB312FDE0C115E34E89 /* HZURLHandler.h in Headers */,
+				F25360E006ED2BD8BAB7BE7E99F78CA3 /* HZURLManager.h in Headers */,
+				9F562F5C25BE8F9C5681698A9F64A754 /* HZURLManagerConfig.h in Headers */,
+				88DB2E88FE7D1225A74AF674D9A8F74A /* HZURLNavigation.h in Headers */,
+				5ABEA5171D15269A9F58AB0180484E1C /* HZURLRewrite.h in Headers */,
+				8F636E104C86939A31823AA8E2DB32C4 /* NSObject+HZURLHandler.h in Headers */,
+				F42C0D574153C8E1E01702B8CD7A5F33 /* UIViewController+HZURLManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		17E8E44193C2FCAD6EBBE452E4F62311 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,25 +407,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B8B8E3291A014B11B5474F86E3E6327 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F538D0DD929ADDE4A35A7A1D96906A5 /* HZErrorViewController.h in Headers */,
-				E56993153EDB2C2230060535DB18B5FC /* HZNavigationController.h in Headers */,
-				80557D0AFF61460A83269896E9273EC0 /* HZURLHandler.h in Headers */,
-				A040AF89455AE03745BEDF0F0EA76A49 /* HZURLManager.h in Headers */,
-				EB567EE22595A146DA4CBA39C88A9450 /* HZURLManagerConfig.h in Headers */,
-				9421A3C0ECBF814FFF62882C3D2CA0F8 /* HZURLNavigation.h in Headers */,
-				39A515AC1A2392FD9259B8838473F50E /* HZURLRewrite.h in Headers */,
-				D32B3E318E3ACBBB6D81A756859B4998 /* NSObject+HZURLHandler.h in Headers */,
-				30AF959430B171A543D92274AE3E8641 /* UIViewController+HZURLManager.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		001A1218B1321BCE172E462538A656C6 /* HZURLManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11010E125A926F337D6DE9E3C88B5159 /* Build configuration list for PBXNativeTarget "HZURLManager" */;
+			buildPhases = (
+				6A53B34DB3533AD408A49245FE9AA087 /* Sources */,
+				2BA0ABDCA1C94FA017B738ACCB9E96CD /* Frameworks */,
+				0A2A9C8F345FE126F8C6A28940F030F9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HZURLManager;
+			productName = HZURLManager;
+			productReference = 0A8C0D8C39C88D1C24F9FE2690B14D41 /* libHZURLManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		19E3185701D09A71981CB1525B23C6AB /* HZFoundation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1E4D8226C7B19EF7AEEC798D1DB8F43 /* Build configuration list for PBXNativeTarget "HZFoundation" */;
@@ -432,24 +442,6 @@
 			name = HZFoundation;
 			productName = HZFoundation;
 			productReference = 8C2D92E57387CB232AAE7993C91A3492 /* libHZFoundation.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		8949BDC5BBFDAE281F9981DDD35013D4 /* HZURLManager */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 11E59491C9CA9DF97FFBEA955CC29040 /* Build configuration list for PBXNativeTarget "HZURLManager" */;
-			buildPhases = (
-				5B9D0AACC2B1E3304FE727D6AD99A9C1 /* Sources */,
-				B794A4E0FC8FDCEC4ADAB9E503D5D60F /* Frameworks */,
-				5B8B8E3291A014B11B5474F86E3E6327 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8F9DDBF59C9346467FB046D7058D0BC8 /* PBXTargetDependency */,
-			);
-			name = HZURLManager;
-			productName = HZURLManager;
-			productReference = 0A8C0D8C39C88D1C24F9FE2690B14D41 /* libHZURLManager.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		CEAFBCB33D627A199F20F4142768EED0 /* Pods-URLManager */ = {
@@ -492,7 +484,7 @@
 			projectRoot = "";
 			targets = (
 				19E3185701D09A71981CB1525B23C6AB /* HZFoundation */,
-				8949BDC5BBFDAE281F9981DDD35013D4 /* HZURLManager */,
+				001A1218B1321BCE172E462538A656C6 /* HZURLManager */,
 				CEAFBCB33D627A199F20F4142768EED0 /* Pods-URLManager */,
 			);
 		};
@@ -519,19 +511,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B9D0AACC2B1E3304FE727D6AD99A9C1 /* Sources */ = {
+		6A53B34DB3533AD408A49245FE9AA087 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A60C33EB4246341C8E170C1C119CBE6E /* HZErrorViewController.m in Sources */,
-				9027B1AF471ACA69EE4B425429645712 /* HZNavigationController.m in Sources */,
-				FCF269A0D78D829151CA1396A9EAC4E3 /* HZURLManager-dummy.m in Sources */,
-				068C7C200D7DDF96D1F111CAAA162953 /* HZURLManager.m in Sources */,
-				892086EA4DBBAD1F58A8855F1EB04A69 /* HZURLManagerConfig.m in Sources */,
-				0DDBEB69A2BFC0E34D0ADBC9FC97A63B /* HZURLNavigation.m in Sources */,
-				C741E2835A233E7EFB7242FFD6E923AE /* HZURLRewrite.m in Sources */,
-				CFC02FD328F16E28F0E9A323C96169DE /* NSObject+HZURLHandler.m in Sources */,
-				FFA737D24B4DE599F05388E6E47B77C1 /* UIViewController+HZURLManager.m in Sources */,
+				B1A7FA1DCCBE7AAF80DF1CFDF41C065C /* HZErrorViewController.m in Sources */,
+				7A5DD7E701B3CEED0B177EC826CC5238 /* HZNavigationController.m in Sources */,
+				91135D0EC907448436E7193AD4FFFE42 /* HZURLManager-dummy.m in Sources */,
+				6E486B65696C5A6A2F9E2144EEFF4E8F /* HZURLManager.m in Sources */,
+				DF876DEC7FA5AEC92DC65BEC82402761 /* HZURLManagerConfig.m in Sources */,
+				9149049286B221CF8F201B041E38A0D9 /* HZURLNavigation.m in Sources */,
+				7179EBA91172C61C4A507D622B1675F2 /* HZURLRewrite.m in Sources */,
+				57491D3120720AE41680A1B28FFCA1C9 /* NSObject+HZURLHandler.m in Sources */,
+				BF327993DCF39DF04618DB35E3546B44 /* UIViewController+HZURLManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,14 +547,8 @@
 		75D7692AD1DD5862D68B59CE1A9754CC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HZURLManager;
-			target = 8949BDC5BBFDAE281F9981DDD35013D4 /* HZURLManager */;
+			target = 001A1218B1321BCE172E462538A656C6 /* HZURLManager */;
 			targetProxy = BBCA67B2930760D2D90CF8E1A65237EC /* PBXContainerItemProxy */;
-		};
-		8F9DDBF59C9346467FB046D7058D0BC8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = HZFoundation;
-			target = 19E3185701D09A71981CB1525B23C6AB /* HZFoundation */;
-			targetProxy = 9F664AAFC378C2B8BE04B91945F87CB3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -610,6 +596,29 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		0D8C67A66BE28BA1550208216FA02E57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D9977E1417F0E10E55DED27DD4005EE /* HZURLManager.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HZURLManager/HZURLManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 		3E6F7BC41874D5425973E8F36829061C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -697,19 +706,19 @@
 			};
 			name = Release;
 		};
-		87EF1FA536CBEB02C2481D63C77FED99 /* Release */ = {
+		75BA5A60AC9E672C3963FF8E4F7EFB21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D9977E1417F0E10E55DED27DD4005EE /* HZURLManager.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/HZURLManager/HZURLManager-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -718,7 +727,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		B1988DB4ECF6274F9123B87208279A18 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -742,29 +751,6 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
-		};
-		D0ADE256AAEFB66E8BCF1B23F45F863B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D9977E1417F0E10E55DED27DD4005EE /* HZURLManager.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/HZURLManager/HZURLManager-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
 		};
 		EE89946BC78CFD7CDF8701A7E3C0B234 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -792,11 +778,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11E59491C9CA9DF97FFBEA955CC29040 /* Build configuration list for PBXNativeTarget "HZURLManager" */ = {
+		11010E125A926F337D6DE9E3C88B5159 /* Build configuration list for PBXNativeTarget "HZURLManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D0ADE256AAEFB66E8BCF1B23F45F863B /* Debug */,
-				87EF1FA536CBEB02C2481D63C77FED99 /* Release */,
+				75BA5A60AC9E672C3963FF8E4F7EFB21 /* Debug */,
+				0D8C67A66BE28BA1550208216FA02E57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

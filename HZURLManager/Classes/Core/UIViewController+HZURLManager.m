@@ -8,7 +8,6 @@
 
 #import "UIViewController+HZURLManager.h"
 #import "HZURLManagerConfig.h"
-#import <HZFoundation/HZFoundation.h>
 #import <objc/runtime.h>
 
 static const char kOriginURL = '\0';
@@ -26,19 +25,19 @@ static const char kParams = '\1';
 + (UIViewController *)viewControllerForURL:(NSURL *)url params:(NSDictionary *)params
 {
     NSDictionary *config = [HZURLManagerConfig sharedConfig].urlControllerConfig;
-    NSAssert(config.isNoEmpty, @"请先配置URL-Ctrl-Config");
+    NSAssert(config, @"请先配置URL-Ctrl-Config");
     
     NSString *scheme = url.scheme;
     
     
-    if (!url || !config.isNoEmpty) return nil;
+    if (!url || !config) return nil;
     
     /*******************根据scheme创建控制器********************/
     UIViewController *viewCtrl = nil;
     NSDictionary *ctrlsOfScheme = [config objectForKey:scheme];
     NSString *strClass = [ctrlsOfScheme objectForKey:[NSString stringWithFormat:@"%@%@",url.host?:@"",url.path]];
     NSString *errorInfo = nil;
-    if(strClass.isNoEmpty) {    //判断配置文件里有无指定配置
+    if(strClass) {    //判断配置文件里有无指定配置
         Class class = NSClassFromString(strClass);
         if(NULL != class) {
             viewCtrl = [[class alloc] init];
@@ -48,7 +47,7 @@ static const char kParams = '\1';
     }else {
         if ([scheme isEqualToString:@"http"]||[scheme isEqualToString:@"https"]) {  //判断是否配置了默认的webViewController
             NSString *strWebCtrl = [HZURLManagerConfig sharedConfig].classOfWebViewCtrl;
-            if (strWebCtrl.isNoEmpty) {
+            if (strWebCtrl) {
                 Class class = NSClassFromString(strWebCtrl);
                 viewCtrl = [[class alloc] initWithURL:url];
             }else {
@@ -68,9 +67,9 @@ static const char kParams = '\1';
     
     if (viewCtrl) {
         NSMutableDictionary *tmpDic = [NSMutableDictionary dictionary];
-        NSDictionary *urlQueryDic = url.queryDic;
-        if (urlQueryDic.isNoEmpty) [tmpDic addEntriesFromDictionary:urlQueryDic];
-        if (params.isNoEmpty) [tmpDic addEntriesFromDictionary:params];
+        NSDictionary *urlQueryDic = [self queryDicWithURL:url];
+        if (urlQueryDic) [tmpDic addEntriesFromDictionary:urlQueryDic];
+        if (params) [tmpDic addEntriesFromDictionary:params];
         viewCtrl.params = tmpDic;
         viewCtrl.originURL = url.absoluteString;
         viewCtrl.hidesBottomBarWhenPushed = [HZURLManagerConfig sharedConfig].hideBottomWhenPushed;
@@ -95,6 +94,47 @@ static const char kParams = '\1';
     UIViewController *viewCtrl = [[noCtrlClass alloc] init];
     [viewCtrl setValue:errorInfo forKey:@"errorInfo"];
     return viewCtrl;
+}
+
++ (NSString *)valueFromKeyValue:(NSString *)keyValue atIndex:(NSUInteger)index
+{
+    return [[keyValue componentsSeparatedByString:@"="] objectAtIndex:index];
+}
+
++ (NSDictionary *)queryDicWithURL:(NSURL *)url
+{
+    NSString *keyValues = url.query;
+    if (!keyValues) return nil;
+    
+    return [self queryDicWithKeysValues:keyValues];
+}
+
+
++ (NSDictionary *)queryDicWithKeysValues:(NSString *)keyValues
+{
+    if (!(keyValues.length > 0)) return @{};
+    
+    NSArray *pairArray = [keyValues componentsSeparatedByString:@"&"];  //键值对字符串
+    NSMutableDictionary *queryDic= [NSMutableDictionary dictionaryWithCapacity:pairArray.count];
+    NSString *key = nil;
+    NSString *obj = nil;
+    if (pairArray.count > 1)
+    {
+        for (NSString *pair in pairArray)
+        {
+            key = [self valueFromKeyValue:pair atIndex:0];
+            obj = [self valueFromKeyValue:pair atIndex:1];
+            [queryDic setObject:[obj stringByRemovingPercentEncoding] forKey:key];
+        }
+    }
+    else if (pairArray.count == 1)
+    {
+        key = [self valueFromKeyValue:keyValues atIndex:0];
+        obj = [self valueFromKeyValue:keyValues atIndex:1];
+        [queryDic setObject:[obj stringByRemovingPercentEncoding] forKey:key];
+    }
+    
+    return queryDic;
 }
 
 #pragma mark - Property

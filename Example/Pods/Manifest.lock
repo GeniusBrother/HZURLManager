@@ -1,9 +1,9 @@
 PODS:
   - HZFoundation (0.1.1)
-  - HZURLManager (0.1.0):
-    - HZFoundation
+  - HZURLManager (0.1.0)
 
 DEPENDENCIES:
+  - HZFoundation
   - HZURLManager (from `../`)
 
 EXTERNAL SOURCES:
@@ -12,8 +12,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   HZFoundation: f9c3d8f2e8adca7a2001ddae1567419ac1821443
-  HZURLManager: 4c31e7c5998e4aabefffcb75c6a1c8713f3cb88f
+  HZURLManager: 203c4e3eb189705712ab9a8088b7fbfd7b84969a
 
-PODFILE CHECKSUM: 92cc5f46dde2e69e818ef7b7ff88e1e4e81d7b18
+PODFILE CHECKSUM: a62094e86e5e31e837d32aa50ebf225630341dc5
 
 COCOAPODS: 1.2.0

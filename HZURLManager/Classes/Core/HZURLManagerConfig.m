@@ -7,7 +7,6 @@
 //
 
 #import "HZURLManagerConfig.h"
-#import <HZFoundation/HZFoundation.h>
 @interface HZURLManagerConfig ()
 
 @property(nonatomic, copy) NSDictionary *urlControllerConfig;
@@ -20,7 +19,21 @@
 
 @implementation HZURLManagerConfig
 #pragma mark - Initialization
-singleton_m
+static id _instance;
++ (id)allocWithZone:(struct _NSZone *)zone
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    return _instance;
+}
+
++ (id)copyWithZone:(struct _NSZone *)zone
+{
+    return _instance;
+}
+
 + (instancetype)sharedConfig
 {
     static dispatch_once_t onceToken;
@@ -44,7 +57,7 @@ singleton_m
 #pragma mark - Public Method
 - (void)loadURLCtrlConfig:(NSString *)ctrlPath urlMethodConfig:(NSString *)methodPath
 {
-    if (ctrlPath.isNoEmpty) {
+    if ([ctrlPath isKindOfClass:[NSString class]] && ctrlPath.length > 0) {
         if ([[NSFileManager defaultManager] fileExistsAtPath:ctrlPath]) {
             self.urlControllerConfig = [NSDictionary dictionaryWithContentsOfFile:ctrlPath];
         }else {
@@ -52,7 +65,7 @@ singleton_m
         }
     }
     
-    if (methodPath.isNoEmpty) {
+    if ([methodPath isKindOfClass:[NSString class]] && methodPath.length > 0) {
         if ([[NSFileManager defaultManager] fileExistsAtPath:methodPath]) {
             self.urlMethodConfig = [NSDictionary dictionaryWithContentsOfFile:methodPath];
         }else {
@@ -63,7 +76,7 @@ singleton_m
 
 - (void)addRewriteRules:(NSArray *)rule
 {
-    if (rule.isNoEmpty) [self.mutableRewriteRule addObjectsFromArray:rule];
+    if (rule) [self.mutableRewriteRule addObjectsFromArray:rule];
 }
 
 #pragma mark - Getter

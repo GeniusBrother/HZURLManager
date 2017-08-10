@@ -7,5 +7,5 @@ target 'URLManager' do
 
   # Pods for URLManager
   pod 'HZURLManager', :path => '../'
-
+  pod 'HZFoundation'
 end

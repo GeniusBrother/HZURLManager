@@ -7,7 +7,6 @@
 //
 
 #import "HZURLManager.h"
-#import <HZFoundation/HZFoundation.h>
 #import "NSObject+HZURLHandler.h"
 #import "HZURLRewrite.h"
 NSString *const HZRedirectPresentMode = @"HZRedirectPresentMode";
@@ -19,7 +18,21 @@ NSString *const HZRedirectPresentMode = @"HZRedirectPresentMode";
 
 @implementation HZURLManager
 #pragma mark - Initialization
-singleton_m
+static id _instance;
++ (id)allocWithZone:(struct _NSZone *)zone
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    return _instance;
+}
+
++ (id)copyWithZone:(struct _NSZone *)zone
+{
+    return _instance;
+}
+
 + (instancetype)sharedManager
 {
     static dispatch_once_t onceToken;
@@ -44,7 +57,7 @@ singleton_m
 #pragma mark - Public Method
 - (id)handleURL:(NSString *)url withTarget:(id)target withParams:(nullable id)parmas
 {
-    if (!url.isNoEmpty) return nil;
+    if (!([url isKindOfClass:[NSString class]] && url.length > 0)) return nil;
     
     NSURL *formatedURL = [self formatedURL:url];
     id<HZURLHandler> handler = [NSObject urlHandlerForURL:formatedURL];
@@ -64,7 +77,7 @@ singleton_m
     NSURL *formatedURL = [self formatedURL:url];
     NSURL *rewritedURL = [HZURLRewrite rewriteURLForURL:formatedURL];
     UIViewController *viewController = [UIViewController viewControllerForURL:rewritedURL params:parmas];
-    if ([options boolValueForKeyPath:HZRedirectPresentMode default:NO]) {
+    if ([[options objectForKey:HZRedirectPresentMode] boolValue]) {
         [HZURLNavigation presentViewController:viewController animated:animated completion:completion];
     }else {
         [HZURLNavigation pushViewController:viewController animated:animated];
@@ -85,7 +98,7 @@ singleton_m
 //格式化URL
 - (NSURL *)formatedURL:(NSString *)url
 {
-    if (!url.isNoEmpty) return nil;
+    if (!url) return nil;
     
     NSString *formatedURLString = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     return [NSURL URLWithString:formatedURLString];
@@ -101,7 +114,7 @@ singleton_m
 #pragma mark - push
 + (void)pushViewControllerWithString:(NSString *)urlstring animated:(BOOL)animated
 {
-    if (!urlstring.isNoEmpty) return;
+    if (!([urlstring isKindOfClass:[NSString class]] && urlstring.length > 0)) return;
     
     UIViewController *viewController = [UIViewController viewControllerForURL:[NSURL URLWithString:urlstring]];
     if (viewController)
@@ -110,7 +123,7 @@ singleton_m
 
 + (void)pushViewControllerWithString:(NSString *)urlstring queryDic:(NSDictionary *)query animated:(BOOL)animated
 {
-    if (!urlstring.isNoEmpty) return;
+    if (!([urlstring isKindOfClass:[NSString class]] && urlstring.length > 0)) return;
     
     UIViewController *viewController = [UIViewController viewControllerForURL:[NSURL URLWithString:urlstring] params:query];
     if (viewController)
@@ -125,7 +138,7 @@ singleton_m
 #pragma mark - Present
 + (void)presentViewControllerWithString:(NSString *)urlstring animated:(BOOL)animated completion:(void (^ _Nullable)(void))completion
 {
-    if (!urlstring.isNoEmpty) return;
+    if (!([urlstring isKindOfClass:[NSString class]] && urlstring.length > 0)) return;
     
     UIViewController *viewController = [UIViewController viewControllerForURL:[NSURL URLWithString:urlstring]];
     if (viewController)
@@ -134,7 +147,7 @@ singleton_m
 
 + (void)presentViewControllerWithString:(NSString *)urlstring queryDic:(NSDictionary *)query animated:(BOOL)animated completion:(void (^ _Nullable)(void))completion
 {
-    if (!urlstring.isNoEmpty) return;
+    if (!([urlstring isKindOfClass:[NSString class]] && urlstring.length > 0)) return;
     
     UIViewController *viewController = [UIViewController viewControllerForURL:[NSURL URLWithString:urlstring] params:query];
     if (viewController)

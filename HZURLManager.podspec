@@ -14,5 +14,4 @@ Pod::Spec.new do |s|
   s.public_header_files = 'HZURLManager/Classes/**/*.h'
   s.source_files = 'HZURLManager/Classes/**/*.{h,m}'
 
-  s.dependency 'HZFoundation'
 end

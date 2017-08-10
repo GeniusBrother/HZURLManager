@@ -17,10 +17,5 @@
   },
   "frameworks": "Foundation",
   "public_header_files": "HZURLManager/Classes/**/*.h",
-  "source_files": "HZURLManager/Classes/**/*.{h,m}",
-  "dependencies": {
-    "HZFoundation": [
-
-    ]
-  }
+  "source_files": "HZURLManager/Classes/**/*.{h,m}"
 }

@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <HZFoundation/HZSingleton.h>
+
 /**
  Provides Configs for `HZURLManager`
  */
 @interface HZURLManagerConfig : NSObject
-singleton_h(Config)
 
 /** URL-Ctrl config */
 @property(nonatomic, readonly) NSDictionary *urlControllerConfig;
@@ -32,6 +31,13 @@ singleton_h(Config)
  A Boolean value indicating whether the toolbar at the bottom of the screen is hidden when the view controller is pushed through URLManager on to a navigation controller. Default is YES.
  */
 @property(nonatomic, assign) BOOL hideBottomWhenPushed;
+
+/**
+ Returns global HZURLManagerConfig instance.
+ 
+ @return HZURLManagerConfig shared instance
+ */
++ (instancetype)sharedConfig;
 
 /**
  Loads config of URL-Controller and URL-Method.
