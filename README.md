@@ -49,9 +49,9 @@ Usage
     
     //Adds URL Rewrite rule. You may be get the rule from remote.
     /**
-      The variable can be used in the target and starts with $, For example, $ 1 ... $ n represents the value of the corresponding tuple in the regular expression, $ query represents the query string part in the URL. 
+      The variable can be used in the target and starts with $, For example, $1 ... $n represents the value of the corresponding tuple in the regular expression, $query represents the query string part in the URL. 
  
- For example, when the @{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page.hz/article?$query&id=$1"} rule is applied, the rewrite engine rewrites the source URL as hz://page.hz/article?title=cool&id=3 when we redirect to https://ww.hz.com/articles/3?title=cool , Finally we'll jump to hz://page.hz/article?title=cool&id=3.
+      For example, when the @{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page.hz/article?$query&id=$1"} rule is applied, the rewrite engine rewrites the source URL as hz://page.hz/article?title=cool&id=3 when we redirect to https://ww.hz.com/articles/3?title=cool , Finally we'll jump to hz://page.hz/article?title=cool&id=3.
      */
     [[HZURLManagerConfig sharedConfig] addRewriteRules:@[@{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page.hz/article?$query&id=$1"}]];
     
