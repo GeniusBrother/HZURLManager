@@ -19,52 +19,70 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    [self loadSubViews];
     
+    //I don't recommend load URLManager Config in View Controller, you should load it in AppDelegate.
+    [self loadConfig];
+
+}
+
+#pragma mark - Config
+- (void)loadConfig
+{
+    //Loads URL-Controller & URL-Method Config.
+    [[HZURLManagerConfig sharedConfig] loadURLCtrlConfig:[[NSBundle mainBundle] pathForResource:@"URL-Controller-Config" ofType:@"plist"] urlMethodConfig:[[NSBundle mainBundle] pathForResource:@"URL-Method-Config" ofType:@"plist"]];
+    
+    //Adds URL Rewrite rule. You may be get the rule from remote.
+    [[HZURLManagerConfig sharedConfig] addRewriteRules:@[@{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page.hz/article?$query&id=$1"}]];
+    
+    //Configs the default name of controller  for Http(s) URL.
+    [HZURLManagerConfig sharedConfig].classOfWebViewCtrl = @"WebViewController";
+}
+
+#pragma mark - Action
+- (void)btnClick:(UIButton *)sender
+{
+    NSInteger tag = sender.tag;
+    
+    if (0 == tag) { //URL-Present
+        [URL_MANAGERN redirectToURL:@"hz://page.hz/article?title=present" animated:YES parmas:nil options:@{HZRedirectPresentMode:@(YES)} completion:nil];
+
+    }else if (1 == tag) { //URL-Push
+        //The following URL will be converted to hz://page.hz/article by rewriting.
+        [URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?title=push" animated:YES];
+        
+    }else if (2 == tag) {   //Default-Http(s)-URL
+        //push a default WebViewController.
+        [URL_MANAGERN redirectToURL:@"https://github.com/GeniusBrother/HZExtend" animated:YES];
+        
+    }else if (3 == tag) {   //URL-Method
+    
+        [URL_MANAGERN handleURL:@"hz://urlmanger.kit/doAlert?title=alert&message=URL-showAlert" withParams:nil];
+        
+    }else if (4 == tag) {   //URL-NoRegister
+        //跳转到没有注册过的控制器时在开发环境会提示错误
+        [URL_MANAGERN redirectToURL:@"hz://urlItemC?title=push" animated:YES];
+    }
+
+}
+
+#pragma mark - UI
+- (void)loadSubViews
+{
     CGFloat viewWidth = self.view.frame.size.width;
-    CGFloat viewHeight = self.view.frame.size.height;
-    UIButton *pageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    pageBtn.frame = CGRectMake((viewWidth -150)/2, (viewHeight-30)/2, 150, 30);
-    [pageBtn addTarget:self action:@selector(push:) forControlEvents:UIControlEventTouchUpInside];
-    [pageBtn setTitle:@"URL-Push" forState:UIControlStateNormal];
-    [pageBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    pageBtn.backgroundColor = [UIColor brownColor];
-    [self.view addSubview:pageBtn];
+    CGFloat btnWidth = 200;
+    CGFloat btnHeight = 30;
     
-    
-    UIButton *dbBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    dbBtn.frame = CGRectMake((viewWidth -150)/2, (viewHeight-30)/2+40, 150, 30);
-    [dbBtn addTarget:self action:@selector(present:) forControlEvents:UIControlEventTouchUpInside];
-    [dbBtn setTitle:@"URL-Present" forState:UIControlStateNormal];
-    [dbBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    dbBtn.backgroundColor = [UIColor brownColor];
-    [self.view addSubview:dbBtn];
-    
-    UIButton *errorBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    errorBtn.frame = CGRectMake((viewWidth -150)/2, (viewHeight-30)/2+80, 150, 30);
-    [errorBtn addTarget:self action:@selector(noRegister:) forControlEvents:UIControlEventTouchUpInside];
-    [errorBtn setTitle:@"URL-NoRegister" forState:UIControlStateNormal];
-    [errorBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    errorBtn.backgroundColor = [UIColor redColor];
-    [self.view addSubview:errorBtn];
-
+    NSArray *titles = @[@"URL-Present",@"URL-Push",@"Default-Http(s)-URL",@"URL-Method",@"URL-NoRegister"];
+    for (NSInteger idx = 0; idx<titles.count; idx++) {
+        UIButton *URLBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        URLBtn.frame = CGRectMake((viewWidth - btnWidth)/2, 100 + idx*(20+btnHeight), btnWidth, btnHeight);
+        URLBtn.tag = idx;
+        [URLBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [URLBtn setTitle:titles[idx] forState:UIControlStateNormal];
+        [URLBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        URLBtn.backgroundColor = [UIColor brownColor];
+        [self.view addSubview:URLBtn];
+    }
 }
-
-- (void)push:(UIButton *)sender
-{
-    //跳转到hz://page.hz/article所对应的控制器
-     [URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?title=push" animated:YES];
-    //@"https://www.hz.com/articles/3?title=push"经过重写后对应于hz://page.hz/article
-}
-
-- (void)present:(UIButton *)sender
-{
-    [URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?title=push" animated:YES parmas:nil options:@{HZRedirectPresentMode:@(YES)} completion:nil];
-}
-
-- (void)noRegister:(UIButton *)sender
-{
-    //跳转到没有注册过的控制器时在开发环境会提示错误
-    [URL_MANAGERN redirectToURL:@"hz://urlItemC?title=push" animated:YES];
-}
-
 @end

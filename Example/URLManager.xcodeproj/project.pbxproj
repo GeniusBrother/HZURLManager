@@ -13,6 +13,8 @@
 		289E25BA1C83C518001B0AA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 289E25B91C83C518001B0AA2 /* Assets.xcassets */; };
 		289E25BD1C83C518001B0AA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289E25BB1C83C518001B0AA2 /* LaunchScreen.storyboard */; };
 		289E25E61C83CA74001B0AA2 /* URLItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289E25E51C83CA74001B0AA2 /* URLItemViewController.m */; };
+		28D88C821F3D7B6400322F0B /* ShowAlertURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D88C811F3D7B6400322F0B /* ShowAlertURLHandler.m */; };
+		28D88C851F3D84F300322F0B /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D88C841F3D84F300322F0B /* WebViewController.m */; };
 		28E29F821F2F0DC8009F3A34 /* URL-Controller-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E29F811F2F0DC8009F3A34 /* URL-Controller-Config.plist */; };
 		28E29F841F2F0DD8009F3A34 /* URL-Method-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E29F831F2F0DD8009F3A34 /* URL-Method-Config.plist */; };
 		FE262775D104AAFAE01D577B /* libPods-URLManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 405EA59D1FC63F9FE67AE90A /* libPods-URLManager.a */; };
@@ -31,6 +33,10 @@
 		289E25BE1C83C518001B0AA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		289E25E41C83CA74001B0AA2 /* URLItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLItemViewController.h; sourceTree = "<group>"; };
 		289E25E51C83CA74001B0AA2 /* URLItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLItemViewController.m; sourceTree = "<group>"; };
+		28D88C801F3D7B6400322F0B /* ShowAlertURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAlertURLHandler.h; sourceTree = "<group>"; };
+		28D88C811F3D7B6400322F0B /* ShowAlertURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAlertURLHandler.m; sourceTree = "<group>"; };
+		28D88C831F3D84F300322F0B /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		28D88C841F3D84F300322F0B /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		28E29F811F2F0DC8009F3A34 /* URL-Controller-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "URL-Controller-Config.plist"; sourceTree = "<group>"; };
 		28E29F831F2F0DD8009F3A34 /* URL-Method-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "URL-Method-Config.plist"; sourceTree = "<group>"; };
 		405EA59D1FC63F9FE67AE90A /* libPods-URLManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-URLManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,12 +76,17 @@
 		289E25AC1C83C518001B0AA2 /* URLManager */ = {
 			isa = PBXGroup;
 			children = (
+				28D88C7F1F3D628300322F0B /* Config */,
 				289E25B01C83C518001B0AA2 /* AppDelegate.h */,
 				289E25B11C83C518001B0AA2 /* AppDelegate.m */,
 				289E25B31C83C518001B0AA2 /* ViewController.h */,
 				289E25B41C83C518001B0AA2 /* ViewController.m */,
 				289E25E41C83CA74001B0AA2 /* URLItemViewController.h */,
 				289E25E51C83CA74001B0AA2 /* URLItemViewController.m */,
+				28D88C801F3D7B6400322F0B /* ShowAlertURLHandler.h */,
+				28D88C811F3D7B6400322F0B /* ShowAlertURLHandler.m */,
+				28D88C831F3D84F300322F0B /* WebViewController.h */,
+				28D88C841F3D84F300322F0B /* WebViewController.m */,
 				289E25B91C83C518001B0AA2 /* Assets.xcassets */,
 				289E25BB1C83C518001B0AA2 /* LaunchScreen.storyboard */,
 				289E25BE1C83C518001B0AA2 /* Info.plist */,
@@ -88,10 +99,17 @@
 			isa = PBXGroup;
 			children = (
 				289E25AE1C83C518001B0AA2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28D88C7F1F3D628300322F0B /* Config */ = {
+			isa = PBXGroup;
+			children = (
 				28E29F811F2F0DC8009F3A34 /* URL-Controller-Config.plist */,
 				28E29F831F2F0DD8009F3A34 /* URL-Method-Config.plist */,
 			);
-			name = "Supporting Files";
+			name = Config;
 			sourceTree = "<group>";
 		};
 		4338D02102BE46796E6B94C7 /* Frameworks */ = {
@@ -234,7 +252,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				289E25B51C83C518001B0AA2 /* ViewController.m in Sources */,
+				28D88C851F3D84F300322F0B /* WebViewController.m in Sources */,
 				289E25B21C83C518001B0AA2 /* AppDelegate.m in Sources */,
+				28D88C821F3D7B6400322F0B /* ShowAlertURLHandler.m in Sources */,
 				289E25AF1C83C518001B0AA2 /* main.m in Sources */,
 				289E25E61C83CA74001B0AA2 /* URLItemViewController.m in Sources */,
 			);

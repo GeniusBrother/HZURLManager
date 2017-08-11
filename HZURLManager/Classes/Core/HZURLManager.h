@@ -43,10 +43,9 @@ extern NSString *const HZRedirectPresentMode;
  @discussion Before use the method, you should registe the URL in {"scheme":{"host/path":"URLHandlerName"}} format in plist file, URLHandlerName is a name of class which implement HZURLHandler protocol. Then load it through HZURLManagerConfig.
  
  @param URL The URL corresponding to the module method.
- @param target The object of using HZURLManager.
  @param params Additional parameters passed to URLHandler.
  */
-- (id)handleURL:(NSString *)URL withTarget:(id)target withParams:(nullable id)params;
+- (id)handleURL:(NSString *)URL withParams:(nullable id)params;
 
 /**
  Navigate to the controller corresponding to the URL.
@@ -57,7 +56,7 @@ extern NSString *const HZRedirectPresentMode;
  @param animated Specify YES to animate the transition or NO if you do not want the transition to be animated.
  @param parmas Additional parameters passed to Controller. You can get the parmas by `pramas`  property see `UIViewController+HZURLManager.h` for more information.
 
- @param options Specify HZRedirectPresentMode equal YES to transition by present way.
+ @param options Specify HZRedirectPresentMode equal YES to transition by present way or default is push way.
  @param completion The block to execute after the presentation finishes.
  */
 - (void)redirectToURL:(NSString *)URL

@@ -17,10 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion You can make different responses depending on the URL.
  
  @param URL The URL corresponding to the module method.
- @param target The object of using HZURLManager
  @param params Additional parameters passed to URLHandler
  */
-- (id)handleURL:(NSURL *)url withTarget:(id)target withParams:(nullable id)params;
+- (id)handleURL:(NSURL *)url withParams:(nullable id)params;
 
 @end
 
