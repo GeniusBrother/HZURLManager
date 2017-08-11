@@ -16,7 +16,7 @@ Contact
 
 Preview
 ==============
-![preview](Screenshoot/urlmanager.gif)
+![preview](Screenshoot/screentshoot.gif)
 
 Installation
 ==============
