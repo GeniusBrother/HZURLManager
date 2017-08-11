@@ -21,7 +21,6 @@
     self.view.backgroundColor = [UIColor brownColor];
     
     CGFloat viewWidth = self.view.frame.size.width;
-    CGFloat viewHeight = self.view.frame.size.height;
     UIButton *pageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     pageBtn.frame = CGRectMake((viewWidth -150)/2, 100, 150, 30);
     [pageBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -43,7 +42,7 @@
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 180, self.view.frame.size.width, 350)];
     titleLabel.numberOfLines = 0;
-            titleLabel.text = @"项目网址:https://github.com/GeniusBrother/HZURLManager\n\nHZExtend:结合MVVM以及MVC优点的架构:\nhttps://github.com/GeniusBrother/HZExtend\n项目特点\n\n1.解放VC:基于MVVM的思想，将数据处理放入ViewModel里从而减少控制器的压力，降低代码耦合.\n\n2.网络请求:基于AFN自定义了贴切业务逻辑的网络请求框架.\n\n3.缓存体系:基于TMCache定制与业务逻辑相符的缓存体系.\n\n4.数据元组:基于FMDB实现了与表元组对应的数据模型.\n\n5.URLManager:支持URL跳转\n\n6.一些常用的基础类扩展.";
+    titleLabel.text = @"项目网址:https://github.com/GeniusBrother/HZURLManager\n\nHZExtend is a collection of iOS components.\nIt consists of the following several independent components:\n\n* HZFoundation — A set of useful categories for Foundation and UIKit.\n *HZURLManager — URL routing library for iOS, support URL rewrite.\n *HZNetwork — A useful networking framework based on AFNetworking for iOS, OS X, watchOS, and tvOS.";
     titleLabel.textColor = [UIColor blackColor];
     titleLabel.font = [UIFont systemFontOfSize:13];
     titleLabel.backgroundColor = [UIColor redColor];

@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Gets the controller corresponding to the URL.
     UIViewController *rootViewCtrl = [[ViewController alloc] init];
-
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[HZNavigationController alloc] initWithRootViewController:rootViewCtrl];
     self.window.backgroundColor = [UIColor whiteColor];
