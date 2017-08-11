@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HZURLManager" 
-  s.version      = "0.1.0"    
+  s.version      = "0.1.1"    
   s.summary      = "URL routing library for iOS,support URL rewrite"
   s.homepage     = "https://github.com/GeniusBrother/HZURLManager.git"
   s.license      = "MIT"
