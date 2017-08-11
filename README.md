@@ -1,86 +1,139 @@
-# HZURLManager
-使用URL进行导航跳转(support URL to navigate)
-####本项目交流群:32272635
-####欢迎有兴趣的有好的想法的同学参与到项目中来，如果有问题请大家加入群中留言或者issue我，或者发邮件给我zuohong_xie@163.com
+HZURLManager
+==============
 
-##Preview##
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/GeniusBrother/HZURLManager/master/LICENSE)&nbsp;
+[![CocoaPods](https://img.shields.io/cocoapods/v/HZURLManager.svg?style=flat)](http://cocoapods.org/pods/HZURLManager)&nbsp;
+[![CocoaPods](http://img.shields.io/cocoapods/p/HZExtend.svg?style=flat)](http://cocoadocs.org/docsets/HZURLManager)&nbsp;
+[![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+
+URL routing library for iOS, support URL rewrite.<br/>
+(It's a component of [HZExtend](https://github.com/ibireme/HZExtend))
+
+Contact
+==============
+#### QQ Group:32272635
+#### Email:zuohong_xie@163.com
+
+Preview
+==============
 ![preview](Screenshoot/urlmanager.gif)
 
-##添加##
-```ruby
-下载文件直接将URLManager文件夹添加到项目中
-```
+Installation
+==============
+### CocoaPods
 
-##其它资源##
-* [简书论坛](http://www.jianshu.com/collection/ba017346481d)
-* [HZExtend,快速开发项目的框架,结合了MVC和MVVM的优点](https://github.com/GeniusBrother/HZExtend)
-* [HZMenuView,以UINavigationController为容器,且导航页面时不关闭的侧边栏](https://github.com/GeniusBrother/HZMenuView)
+1. Add `pod 'HZURLManager` to your Podfile.
+2. Run `pod install` or `pod update`.
+3. Import \<HZURLManager/HZURLManager.h\>.
 
-##一.URL配置##
+Documentation
+==============
+Full API documentation is available on [CocoaDocs](http://cocoadocs.org/docsets/HZURLManager/).<br/>
+
+Requirements
+==============
+This library requires `iOS 8.0+` and `Xcode 8.0+`.
+
+License
+==============
+HZURLManager is provided under the MIT license. See LICENSE file for details.
+
+Usage
+==============
+### URL Config
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+     //Loads URL-Controller & URL-Method Config.
+    [[HZURLManagerConfig sharedConfig] loadURLCtrlConfig:[[NSBundle mainBundle] pathForResource:@"URL-Controller-Config" ofType:@"plist"] urlMethodConfig:[[NSBundle mainBundle] pathForResource:@"URL-Method-Config" ofType:@"plist"]];
+    
+    //Adds URL Rewrite rule. You may be get the rule from remote.
     /**
-     *  URL配置
-     *  URL的Host->class即 URL的host:Class of UIViewController
+      The variable can be used in the target and starts with $, For example, $ 1 ... $ n represents the value of the corresponding tuple in the regular expression, $ query represents the query string part in the URL. 
+ 
+ For example, when the @{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page.hz/article?$query&id=$1"} rule is applied, the rewrite engine rewrites the source URL as hz://page.hz/article?title=cool&id=3 when we redirect to https://ww.hz.com/articles/3?title=cool , Finally we'll jump to hz://page.hz/article?title=cool&id=3.
      */
-    [HZURLManageConfig sharedConfig].config = @{
-                                                @"hz://urlItemA":@"ViewController",
-                                                @"hz://urlItemB":@"URLItemViewController"
-                                                };
-    //......                                            
+    [[HZURLManagerConfig sharedConfig] addRewriteRules:@[@{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page.hz/article?$query&id=$1"}]];
+    
+    //Configs the default name of controller for Http(s) URL.
+    [HZURLManagerConfig sharedConfig].classOfWebViewCtrl = @"WebViewController";                                        
 }    
 ```
-##二.跳转##
-####push
+### Redirect
 ```objective-c
-//push hz://urlItemB 到对应的控制器,并传入参数title=push
-[HZURLManager pushViewControllerWithString:@"hz://urlItemB?title=push" animated:YES];
+//Present
+[URL_MANAGERN redirectToURL:@"hz://page.hz/article?title=present" animated:YES parmas:nil options:@{HZRedirectPresentMode:@(YES)} completion:nil];
 
-//最后通过控制器的queryDic属性获取@{@“title”:@"push",@"key":@"value"},封装在UIViewController+HZURLManager.h
-[HZURLManager pushViewControllerWithString:@"hz://urlItemB?title=push"" queryDic:@{@"key":@"value"} animated:YES];
-```
-####present
-```objective-c
-//push hz://urlItemB 到对应的控制器,并传入参数title=present
-[HZURLManager presentViewControllerWithString:@"hz://urlItemB?title=present" animated:YES completion:nil];
+//Push
+//The following URL will be converted to hz://page.hz/article by rewriting.
+[URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?title=push" animated:YES];
 
-//最后通过控制器的queryDic属性获取@{@“title”:@"present",@"key":@"value"},封装在UIViewController+HZURLManager.h
-[HZURLManager presentViewControllerWithString:@"hz://urlItemB?title=push"" queryDic:@{@"key":@"value"} animated:YES completion:nil];
 ```
-####Dissmiss
+
+### Executes Method
 ```objective-c
+@interface ShowAlertURLHandler ()<HZURLHandler>
+@end
+@implementation ShowAlertURLHandler
 /**
- *  1.若当前控制器的容器为导航控制器,则pop
- *  2.若当前控制器为模态视图控制器,则dismiss
+ hz://urlmanger.kit/doAlert
+ 
+ @param title
+ @param message
  */
-[HZURLManager dismissCurrentAnimated:YES];
+- (id)handleURL:(NSURL *)url withParams:(id)params
+{
+    NSDictionary *queryParam = url.queryDic;
+    
+    NSString *title = [queryParam objectForKey:@"title"];
+    NSString *message = [queryParam objectForKey:@"message"];
+    
+    UIAlertController *alerController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *confirmAtion = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDefault handler:nil];
+    [alerController addAction:confirmAtion];
+    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"Cancle" style:UIAlertActionStyleCancel handler:nil];
+    [alerController addAction:cancleAction];
+    [[HZURLNavigation currentViewController] presentViewController:alerController animated:YES completion:nil];
+
+    return nil;
+}
+
+@end
+
+//show the alert
+[URL_MANAGERN handleURL:@"hz://urlmanger.kit/doAlert?title=alert&message=URL-showAlert" withParams:nil];
 ```
 
-##三.其它##
-####生成控制器
+### Navigation
 ```objective-c
-//根据URL创建控制器
-UIViewController *rootViewCtrl = [UIViewController viewControllerWithString:@"hz://urlItemA"];
-```
+//Creates Controller
+UIViewController *controller = [UIViewController viewControllerForURL:[NSURL URLWithString:@"hz://page.hz/article"]];
 
-####获得当前控制器
-```objective-c
+//Gets current Controller
 UIViewController *currentViewCtrl = [HZURLNavigation currentViewController];
+
+//Gets current Navigation Controller
+UIViewController *currentNavViewCtrl = [HZURLNavigation currentNavigationViewController];
+
+//Dismiss(Pop or dissmiss) View Controller
+[HZURLNavigation dismissCurrentAnimated:YES];
+
 ```
 
-####获得当前的导航控制器
-```objective-c
-UINavigationController *currentNavCtrl = [HZURLNavigation currentNavigationViewController];
-```
-
-####参数传递
+### Param
 ```objective-c
 @interface UIViewController (HZURLManager)
+
 /**
- *  由查询字符串和跳转时传入的NSDictionary组成
+ The URL corresponding to the Controller
  */
-@property(nonatomic, strong, readonly) NSDictionary *queryDic;
+@property(nonatomic, strong, readonly) NSString *originURL;
+
+/**
+ Consists of a query string and additional parameters passed by user.
+ */
+@property(nonatomic, strong, readonly) NSDictionary *params;
 
 @end
 ```
+
