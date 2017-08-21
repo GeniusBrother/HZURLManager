@@ -7,7 +7,7 @@ HZURLManager
 [![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 
 URL routing library for iOS, support URL rewrite.<br/>
-(It's a component of [HZExtend](https://github.com/ibireme/HZExtend))
+(It's a component of [HZExtend](https://github.com/GeniusBrother/HZExtend))
 
 Contact
 ==============
