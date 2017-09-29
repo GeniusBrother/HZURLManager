@@ -84,14 +84,29 @@ static id _instance;
     }
 }
 
-- (void)redirectToURL:(NSString *)url animated:(BOOL)animated
+- (void)pushToURL:(NSString *)url animated:(BOOL)animated
 {
     [self redirectToURL:url animated:animated parmas:nil options:nil completion:nil];
 }
 
-- (void)redirectToURL:(NSString *)url animated:(BOOL)animated params:(nullable NSDictionary *)params
+- (void)pushToURL:(NSString *)url animated:(BOOL)animated params:(nullable NSDictionary *)params
 {
     [self redirectToURL:url animated:animated parmas:params options:nil completion:nil];
+}
+
++ (void)pushViewController:(UIViewController *)ctrl animated:(BOOL)animated
+{
+    [HZURLNavigation pushViewController:ctrl animated:animated];
+}
+
++ (void)presentViewController:(UIViewController *)ctrl animated:(BOOL)animated completion:(void (^)(void))completion
+{
+    [HZURLNavigation presentViewController:ctrl animated:animated completion:completion];
+}
+
++ (void)dismissCurrentAnimated:(BOOL)animated
+{
+    [HZURLNavigation dismissCurrentAnimated:animated];
 }
 
 #pragma mark - Private Method
@@ -130,10 +145,7 @@ static id _instance;
         [HZURLNavigation pushViewController:viewController animated:animated];
 }
 
-+ (void)pushViewController:(UIViewController *)ctrl animated:(BOOL)animated
-{
-    [HZURLNavigation pushViewController:ctrl animated:animated];
-}
+
 
 #pragma mark - Present
 + (void)presentViewControllerWithString:(NSString *)urlstring animated:(BOOL)animated completion:(void (^ _Nullable)(void))completion
@@ -152,16 +164,6 @@ static id _instance;
     UIViewController *viewController = [UIViewController viewControllerForURL:[NSURL URLWithString:urlstring] params:query];
     if (viewController)
         [HZURLNavigation presentViewController:viewController animated:animated completion:completion];
-}
-
-+ (void)presentViewController:(UIViewController *)ctrl animated:(BOOL)animated completion:(void (^)(void))completion
-{
-    [HZURLNavigation presentViewController:ctrl animated:animated completion:completion];
-}
-
-+ (void)dismissCurrentAnimated:(BOOL)animated
-{
-    [HZURLNavigation dismissCurrentAnimated:animated];
 }
 
 @end

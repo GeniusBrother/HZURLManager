@@ -68,9 +68,13 @@ extern NSString *const HZRedirectPresentMode;
 /**
  Navigate to the controller corresponding to the URL by push way.
  */
-- (void)redirectToURL:(NSString *)URL animated:(BOOL)animated params:(nullable NSDictionary *)params;
-- (void)redirectToURL:(NSString *)URL animated:(BOOL)animated;
+- (void)pushToURL:(NSString *)URL animated:(BOOL)animated params:(nullable NSDictionary *)params;
+- (void)pushToURL:(NSString *)URL animated:(BOOL)animated;
 
+
++ (void)pushViewController:(UIViewController *)ctrl animated:(BOOL)animated;
++ (void)presentViewController:(UIViewController *)ctrl animated:(BOOL)animated completion:(nullable void (^)(void))completion;
++ (void)dismissCurrentAnimated:(BOOL)animated;
 
 @end
 
@@ -78,11 +82,8 @@ extern NSString *const HZRedirectPresentMode;
 
 + (void)pushViewControllerWithString:(NSString *)urlstring animated:(BOOL)animated __deprecated_msg("请使用- (void)redirectToURL:animated:");
 + (void)pushViewControllerWithString:(NSString *)urlstring queryDic:(NSDictionary *)query animated:(BOOL)animated __deprecated_msg("- (void)redirectToURL:animated:params");
-+ (void)pushViewController:(UIViewController *)ctrl animated:(BOOL)animated __deprecated_msg("请通过HZURLNavigation实现");
 + (void)presentViewControllerWithString:(NSString *)urlstring animated:(BOOL)animated completion:(nullable void (^)(void))completion __deprecated_msg("请使用- (void)redirectToURL:animated:params:options:completion");
 + (void)presentViewControllerWithString:( NSString *)urlstring queryDic:(NSDictionary *)query animated:(BOOL)animated completion:(nullable void (^)(void))completion __deprecated_msg("请使用- (void)redirectToURL:animated:params:options:completion");
-+ (void)presentViewController:(UIViewController *)ctrl animated:(BOOL)animated completion:(nullable void (^)(void))completion __deprecated_msg("请通过HZURLNavigation实现");
-+ (void)dismissCurrentAnimated:(BOOL)animated __deprecated_msg("请通过HZURLNavigation实现");
 @end
 
 
