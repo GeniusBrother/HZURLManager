@@ -33,9 +33,6 @@
     
     //Adds URL Rewrite rule. You may be get the rule from remote.
     [[HZURLManagerConfig sharedConfig] addRewriteRules:@[@{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page/article?$query&id=$1"}]];
-    
-    //Configs the default name of controller  for Http(s) URL.
-    [HZURLManagerConfig sharedConfig].classOfWebViewCtrl = @"WebViewController";
 }
 
 #pragma mark - Action
