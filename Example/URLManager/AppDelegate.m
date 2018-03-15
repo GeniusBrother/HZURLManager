@@ -25,6 +25,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    NSURL *url = [NSURL URLWithString:@"wxren://page/share"];
+    
+    NSLog(@"%@ %@",url.host, url.path);
+    
     return YES;
 }
 

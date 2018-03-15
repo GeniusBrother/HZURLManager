@@ -1,5 +1,5 @@
 //
-//  NSArray+HzExtend.h
+//  NSArray+HZExtend.h
 //  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
 //  Created by GeniusBrother on 15/7/20.
@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- Provide some some common method for `NSArray`.
+ Provides extensions for `NSArray`.
  */
 @interface NSArray (HZExtend)
 

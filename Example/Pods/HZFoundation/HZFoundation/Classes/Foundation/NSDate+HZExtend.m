@@ -1,9 +1,9 @@
 //
 //  NSDate+HZExtend.m
-//  Pods
+//  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
-//  Created by xzh on 2017/2/17.
-//
+//  Created by GeniusBrother on 2017/2/17.
+//  Copyright (c) 2017 GeniusBrother. All rights reserved.
 //
 
 #import "NSDate+HZExtend.h"

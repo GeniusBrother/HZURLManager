@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- Provide some some common method for `NSData`.
+ Provides extensions method for `NSData`.
  */
 @interface NSData (HZExtend)
 

@@ -8,6 +8,7 @@
 
 #import "WebViewController.h"
 #import <HZURLManager/HZURLManager.h>
+#import <HZFoundation/HZFoundation.h>
 #import <WebKit/WebKit.h>
 @interface WebViewController ()<WKNavigationDelegate>
 
@@ -20,7 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSURL *url = [NSURL URLWithString:self.originURL];
+    NSString *urlstring = [[self.params objectForKey:@"url"] urlDecode];
+    NSURL *url = [NSURL URLWithString:urlstring];
     WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     webView.navigationDelegate = self;
     [self.view addSubview:webView];

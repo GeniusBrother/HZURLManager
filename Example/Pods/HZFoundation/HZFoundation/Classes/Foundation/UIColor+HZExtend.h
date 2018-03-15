@@ -1,15 +1,16 @@
 //
-//  UIColor+HzExtend.h
-//  ZHFramework
+//  UIColor+HZExtend.h
+//  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
-//  Created by xzh. on 15/7/20.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 2015/7/20.
+//  Copyright (c) 2015 GeniusBrother. All rights reserved.
 //
-
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/**
+ Provides extensions method for `UIColor`.
+ */
 @interface UIColor (HZExtend)
 
 /**

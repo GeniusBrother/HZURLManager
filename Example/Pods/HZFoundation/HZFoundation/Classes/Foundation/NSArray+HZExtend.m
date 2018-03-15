@@ -1,9 +1,9 @@
 //
-//  NSArray+HzExtend.m
-//  ZHFramework
+//  NSArray+HZExtend.m
+//  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
-//  Created by xzh. on 15/7/20.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 15/7/20.
+//  Copyright (c) 2015 GeniusBrother. All rights reserved.
 //
 
 #import "NSArray+HZExtend.h"
@@ -13,7 +13,6 @@
 {
     if (self.count == 0 || index == NSNotFound || (index >(self.count-1)) || index < 0)
     {
-        NSAssert(NO, @"out of bound");
         return nil;
     }
     

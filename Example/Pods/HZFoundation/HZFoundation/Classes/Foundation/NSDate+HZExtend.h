@@ -11,6 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ Provides extensions method for `NSDate`.
+ */
 @interface NSDate (HZExtend)
 
 #pragma mark - Properties
@@ -149,7 +152,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)formatTimeWithSeparator:(NSString *)separator;
 
 /**
- Returns current timestamp
+ Returns current timestamp.
  */
 + (NSUInteger)timeStamp;
 

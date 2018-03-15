@@ -8,7 +8,9 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/**
+ Provides extensions method for `NSURL`.
+ */
 @interface NSURL (HZExtend)
 
 /** Returns absoluteString but not contain the part of query. */

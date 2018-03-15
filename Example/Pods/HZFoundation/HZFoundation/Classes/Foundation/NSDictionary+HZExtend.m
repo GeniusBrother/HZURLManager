@@ -1,9 +1,9 @@
 //
-//  NSDictionary+HzExtend.m
-//  ZHFramework
+//  NSDictionary+HZExtend.m
+//  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
-//  Created by xzh. on 15/7/26.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 15/7/26.
+//  Copyright (c) 2015 GeniusBrother. All rights reserved.
 //
 
 #import "NSDictionary+HZExtend.h"
@@ -14,8 +14,29 @@
 {
     if (!keyPath.isNoEmpty) return nil;
     
-    NSObject *result = [self valueForKeyPath:keyPath];
-    return result;
+    NSArray * array = [keyPath componentsSeparatedByString:@"."];
+    if ( 0 == array.count ) return nil;
+    
+    NSObject * result = nil;
+    NSDictionary * dict = self;
+    
+    for (NSString * subPath in array )
+    {
+        if (0 == subPath.length) continue;
+        
+        result = [dict objectForKey:subPath];
+        
+        if ([result isKindOfClass:[NSDictionary class]]) {
+            dict = (NSDictionary *)result;
+            continue;
+        }else if([array lastObject] == subPath){
+            return result;
+        }else {
+            return nil;
+        }
+    }
+    
+    return [result isKindOfClass:[NSNull class]]?nil:result;
 }
 
 - (id)objectForKeyPath:(NSString *)keyPath otherwise:(id)other
@@ -27,6 +48,16 @@
     }
     
     return obj;
+}
+
+- (NSDictionary *)entriesForKeys:(NSArray *)keys
+{
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    for (id key in keys) {
+        id value = self[key];
+        if (value) dic[key] = value;
+    }
+    return dic;
 }
 
 - (NSString *)keyValueString
@@ -50,7 +81,7 @@
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 }
 
-- (NSInteger)integerValueForKeyPath:(NSString *)keyPath default:(NSInteger)def
+- (NSInteger)integerValueForKeyPath:(NSString *)keyPath def:(NSInteger)def
 {
     id value = [self objectForKeyPath:keyPath];
     
@@ -61,7 +92,7 @@
     }
 }
 
-- (long)longLongValueForKey:(NSString *)keyPath default:(long)def
+- (long)longLongValueForKey:(NSString *)keyPath def:(long)def
 {
     id value = [self objectForKeyPath:keyPath];
     
@@ -72,7 +103,7 @@
     }
 }
 
-- (BOOL)boolValueForKeyPath:(NSString *)keyPath default:(BOOL)def
+- (BOOL)boolValueForKeyPath:(NSString *)keyPath def:(BOOL)def
 {
     id value = [self objectForKeyPath:keyPath];
 
@@ -83,7 +114,7 @@
     }
 }
 
-- (double)doubleValueForKeyPath:(NSString *)keyPath default:(double)def
+- (double)doubleValueForKeyPath:(NSString *)keyPath def:(double)def
 {
     id value = [self objectForKeyPath:keyPath];
     
@@ -94,7 +125,7 @@
     }
 }
 
-- (float)floatValueForKey:(NSString *)keyPath default:(float)def
+- (float)floatValueForKey:(NSString *)keyPath def:(float)def
 {
     id value = [self objectForKeyPath:keyPath];
     

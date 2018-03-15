@@ -23,7 +23,6 @@
     
     //I don't recommend load URLManager Config in View Controller, you should load it in AppDelegate.
     [self loadConfig];
-
 }
 
 #pragma mark - Config
@@ -33,7 +32,7 @@
     [[HZURLManagerConfig sharedConfig] loadURLCtrlConfig:[[NSBundle mainBundle] pathForResource:@"URL-Controller-Config" ofType:@"plist"] urlMethodConfig:[[NSBundle mainBundle] pathForResource:@"URL-Method-Config" ofType:@"plist"]];
     
     //Adds URL Rewrite rule. You may be get the rule from remote.
-    [[HZURLManagerConfig sharedConfig] addRewriteRules:@[@{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page.hz/article?$query&id=$1"}]];
+    [[HZURLManagerConfig sharedConfig] addRewriteRules:@[@{@"match":@"(?:https://)?www.hz.com/articles/(\\d)\\?(.*)",@"target":@"hz://page/article?$query&id=$1"}]];
     
     //Configs the default name of controller  for Http(s) URL.
     [HZURLManagerConfig sharedConfig].classOfWebViewCtrl = @"WebViewController";
@@ -45,25 +44,20 @@
     NSInteger tag = sender.tag;
     
     if (0 == tag) { //URL-Present
-        [URL_MANAGERN redirectToURL:@"hz://page.hz/article?title=present" animated:YES parmas:nil options:@{HZRedirectPresentMode:@(YES)} completion:nil];
-
+        [URL_MANAGERN redirectToURL:@"hz://page/article?title=present" animated:YES parmas:nil options:@{HZRedirectPresentMode:@(YES)} completion:nil];
     }else if (1 == tag) { //URL-Push
-        //The following URL will be converted to hz://page.hz/article by rewriting.
-        [URL_MANAGERN redirectToURL:@"https://www.hz.com/articles/3?title=push" animated:YES];
-        
-    }else if (2 == tag) {   //Default-Http(s)-URL
-        //push a default WebViewController.
-        [URL_MANAGERN redirectToURL:@"https://github.com/GeniusBrother/HZExtend" animated:YES];
-        
-    }else if (3 == tag) {   //URL-Method
-    
+        //The following URL will be converted to hz://page/article by rewriting.
+        [URL_MANAGERN pushToURL:@"https://www.hz.com/articles/3?title=push" animated:YES];
+    }else if (2 == tag) {   
+        NSString *targetUrl = @"https://github.com/GeniusBrother/HZExtend";
+        NSString *url = [NSString stringWithFormat:@"hz://page/web?url=%@",[targetUrl urlEncode]];
+        [URL_MANAGERN pushToURL:url animated:YES];
+    }else if (3 == tag) {   //URL-Action
         [URL_MANAGERN handleURL:@"hz://urlmanger.kit/doAlert?title=alert&message=URL-showAlert" withParams:nil];
-        
     }else if (4 == tag) {   //URL-NoRegister
         //跳转到没有注册过的控制器时在开发环境会提示错误
-        [URL_MANAGERN redirectToURL:@"hz://urlItemC?title=push" animated:YES];
+        [URL_MANAGERN pushToURL:@"hz://urlItemC?title=push" animated:YES];
     }
-
 }
 
 #pragma mark - UI

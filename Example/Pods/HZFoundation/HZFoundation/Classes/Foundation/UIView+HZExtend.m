@@ -1,13 +1,14 @@
 //
-//  UIView+HZExtend.m
-//  ZHFramework
+//  UIApplication+HZExtend.m
+//  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
-//  Created by xzh. on 15/7/26.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 2017/8/4.
+//  Copyright (c) 2017 GeniusBrother. All rights reserved.
 //
 
 #import "UIView+HZExtend.h"
-
+#import <objc/runtime.h>
+static const char kBlock = '\0';
 @implementation UIView (HZExtend)
 
 #pragma mark - Properties
@@ -142,7 +143,6 @@
     return nil;
 }
 
-#pragma mark - Public Method
 - (UIImage *)snapshotImageAfterScreenUpdates:(BOOL)afterUpdates
 {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 0);
@@ -151,6 +151,35 @@
     UIGraphicsEndImageContext();
     return snap;
 }
+
+- (void)tapPeformBlock:(HZViewTapBlock)block
+{
+    self.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self addGestureRecognizer:tap];
+    [self setBlock:block];
+}
+
+- (void)tap:(UITapGestureRecognizer *)tap
+{
+    HZViewTapBlock block = [self block];
+    if (block) {
+        block(self);
+    }
+}
+
+- (void)setBlock:(HZViewTapBlock)block
+{
+    if (block) {
+        objc_setAssociatedObject(self, &kBlock, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    }
+}
+
+- (HZViewTapBlock)block
+{
+    return objc_getAssociatedObject(self, &kBlock);
+}
+
 
 @end
 

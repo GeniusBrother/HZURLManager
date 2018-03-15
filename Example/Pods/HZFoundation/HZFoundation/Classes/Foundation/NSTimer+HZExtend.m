@@ -1,9 +1,9 @@
 //
 //  NSTimer+HZExtend.m
-//  Pods
+//  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
-//  Created by xzh on 2017/8/4.
-//
+//  Created by GeniusBrother on 2017/8/4.
+//  Copyright (c) 2017 GeniusBrother. All rights reserved.
 //
 
 #import "NSTimer+HZExtend.h"

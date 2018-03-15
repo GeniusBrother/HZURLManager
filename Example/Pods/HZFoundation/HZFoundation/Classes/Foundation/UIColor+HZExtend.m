@@ -1,9 +1,9 @@
 //
-//  UIColor+HzExtend.m
-//  ZHFramework
+//  UIColor+HZExtend.m
+//  HZFoundation <https://github.com/GeniusBrother/HZFoundation>
 //
-//  Created by xzh. on 15/7/20.
-//  Copyright (c) 2015年 xzh. All rights reserved.
+//  Created by GeniusBrother on 2015/7/20.
+//  Copyright (c) 2017 GeniusBrother. All rights reserved.
 //
 
 #import "UIColor+HZExtend.h"

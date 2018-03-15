@@ -1,19 +1,27 @@
 PODS:
-  - HZFoundation (0.1.1)
-  - HZURLManager (0.1.0)
+  - HZFoundation (0.1.3)
+  - HZURLManager (0.1.1)
 
 DEPENDENCIES:
-  - HZFoundation
+  - HZFoundation (from `https://github.com/GeniusBrother/HZFoundation`, branch `dev`)
   - HZURLManager (from `../`)
 
 EXTERNAL SOURCES:
+  HZFoundation:
+    :branch: dev
+    :git: https://github.com/GeniusBrother/HZFoundation
   HZURLManager:
     :path: ../
 
+CHECKOUT OPTIONS:
+  HZFoundation:
+    :commit: 5b541398a8ff97dae359f02b940086084c56cd34
+    :git: https://github.com/GeniusBrother/HZFoundation
+
 SPEC CHECKSUMS:
-  HZFoundation: f9c3d8f2e8adca7a2001ddae1567419ac1821443
-  HZURLManager: 203c4e3eb189705712ab9a8088b7fbfd7b84969a
+  HZFoundation: 6dce609c11a0d9671020921207ea813a37da2b38
+  HZURLManager: 87f2e040810d2c10da85692128e374cf198b942e
 
-PODFILE CHECKSUM: a62094e86e5e31e837d32aa50ebf225630341dc5
+PODFILE CHECKSUM: 3162d8dcc3682184cee62b23be9a1b9f9f49431a
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1
