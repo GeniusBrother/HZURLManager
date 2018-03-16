@@ -30,14 +30,6 @@ extern NSString *const HZRedirectPresentMode;
 @interface HZURLManager : NSObject
 
 /**
- Returns global HZURLManager instance.
- 
- @return HZURLManager shared instance
- */
-+ (instancetype)sharedManager;
-
-
-/**
  Calls module method specified by the given URL.
  
  @discussion Before use the method, you should registe the URL in {"scheme":{"host/path":"URLHandlerName"}} format in plist file, URLHandlerName is a name of class which implement HZURLHandler protocol. Then load it through HZURLManagerConfig.
@@ -45,7 +37,7 @@ extern NSString *const HZRedirectPresentMode;
  @param URL The URL corresponding to the module method.
  @param params Additional parameters passed to URLHandler.
  */
-- (id)handleURL:(NSString *)URL withParams:(nullable id)params;
++ (id)handleURL:(NSString *)URL withParams:(nullable id)params;
 
 /**
  Navigate to the controller corresponding to the URL.
@@ -59,7 +51,7 @@ extern NSString *const HZRedirectPresentMode;
  @param options Specify HZRedirectPresentMode equal YES to transition by present way or default is push way.
  @param completion The block to execute after the presentation finishes.
  */
-- (void)redirectToURL:(NSString *)URL
++ (void)redirectToURL:(NSString *)URL
              animated:(BOOL)animated
                parmas:(nullable NSDictionary *)parmas
               options:(nullable NSDictionary *)options
@@ -68,8 +60,8 @@ extern NSString *const HZRedirectPresentMode;
 /**
  Navigate to the controller corresponding to the URL by push way.
  */
-- (void)pushToURL:(NSString *)URL animated:(BOOL)animated params:(nullable NSDictionary *)params;
-- (void)pushToURL:(NSString *)URL animated:(BOOL)animated;
++ (void)pushToURL:(NSString *)URL animated:(BOOL)animated params:(nullable NSDictionary *)params;
++ (void)pushToURL:(NSString *)URL animated:(BOOL)animated;
 
 
 + (void)pushViewController:(UIViewController *)ctrl animated:(BOOL)animated;

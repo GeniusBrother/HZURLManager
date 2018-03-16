@@ -41,19 +41,19 @@
     NSInteger tag = sender.tag;
     
     if (0 == tag) { //URL-Present
-        [URL_MANAGERN redirectToURL:@"hz://page/article?title=present" animated:YES parmas:nil options:@{HZRedirectPresentMode:@(YES)} completion:nil];
+        [HZURLManager redirectToURL:@"hz://page/article?title=present" animated:YES parmas:nil options:@{HZRedirectPresentMode:@(YES)} completion:nil];
     }else if (1 == tag) { //URL-Push
         //The following URL will be converted to hz://page/article by rewriting.
-        [URL_MANAGERN pushToURL:@"https://www.hz.com/articles/3?title=push" animated:YES];
+        [HZURLManager pushToURL:@"https://www.hz.com/articles/3?title=push" animated:YES];
     }else if (2 == tag) {   
         NSString *targetUrl = @"https://github.com/GeniusBrother/HZExtend";
         NSString *url = [NSString stringWithFormat:@"hz://page/web?url=%@",[targetUrl urlEncode]];
-        [URL_MANAGERN pushToURL:url animated:YES];
+        [HZURLManager pushToURL:url animated:YES];
     }else if (3 == tag) {   //URL-Action
-        [URL_MANAGERN handleURL:@"hz://urlmanger.kit/doAlert?title=alert&message=URL-showAlert" withParams:nil];
+        [HZURLManager handleURL:@"hz://urlmanger.kit/doAlert?title=alert&message=URL-showAlert" withParams:nil];
     }else if (4 == tag) {   //URL-NoRegister
         //跳转到没有注册过的控制器时在开发环境会提示错误
-        [URL_MANAGERN pushToURL:@"hz://urlItemC?title=push" animated:YES];
+        [HZURLManager pushToURL:@"hz://urlItemC?title=push" animated:YES];
     }
 }
 

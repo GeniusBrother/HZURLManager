@@ -17,45 +17,8 @@ NSString *const HZRedirectPresentMode = @"HZRedirectPresentMode";
 @end
 
 @implementation HZURLManager
-#pragma mark - Initialization
-static id _instance;
-+ (id)allocWithZone:(struct _NSZone *)zone
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _instance = [super allocWithZone:zone];
-    });
-    return _instance;
-}
-
-+ (id)copyWithZone:(struct _NSZone *)zone
-{
-    return _instance;
-}
-
-+ (instancetype)sharedManager
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _instance = [[self alloc] init];
-    });
-    return _instance;
-}
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            
-        });
-    }
-    return self;
-}
-
 #pragma mark - Public Method
-- (id)handleURL:(NSString *)url withParams:(nullable id)parmas
++ (id)handleURL:(NSString *)url withParams:(nullable id)parmas
 {
     if (!([url isKindOfClass:[NSString class]] && url.length > 0)) return nil;
     
@@ -68,7 +31,7 @@ static id _instance;
     return nil;
 }
 
-- (void)redirectToURL:(NSString *)url
++ (void)redirectToURL:(NSString *)url
              animated:(BOOL)animated
                parmas:(nullable NSDictionary *)parmas
               options:(nullable NSDictionary *)options
@@ -84,12 +47,12 @@ static id _instance;
     }
 }
 
-- (void)pushToURL:(NSString *)url animated:(BOOL)animated
++ (void)pushToURL:(NSString *)url animated:(BOOL)animated
 {
     [self redirectToURL:url animated:animated parmas:nil options:nil completion:nil];
 }
 
-- (void)pushToURL:(NSString *)url animated:(BOOL)animated params:(nullable NSDictionary *)params
++ (void)pushToURL:(NSString *)url animated:(BOOL)animated params:(nullable NSDictionary *)params
 {
     [self redirectToURL:url animated:animated parmas:params options:nil completion:nil];
 }
@@ -111,7 +74,7 @@ static id _instance;
 
 #pragma mark - Private Method
 //格式化URL
-- (NSURL *)formatedURL:(NSString *)url
++ (NSURL *)formatedURL:(NSString *)url
 {
     if (!url) return nil;
     
